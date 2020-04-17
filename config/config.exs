@@ -15,7 +15,10 @@ config :ac_catalog, AcCatalogWeb.Endpoint,
   secret_key_base: "iYs+GOVXF1cwIDFutyoYmSfkd03YWvvdNzGjvnoX/j1wSuequVWBI7wIHIa39tI7",
   render_errors: [view: AcCatalogWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: AcCatalog.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "Sepnug0X7JvJ4WEEqkYJoXBpFs7UNfJV"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,

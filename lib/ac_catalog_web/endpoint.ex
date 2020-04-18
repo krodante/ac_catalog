@@ -7,15 +7,14 @@ defmodule AcCatalogWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_ac_catalog_key",
-    signing_salt: "n6dUQlq4mgs8hBgbTMG4Tg1erAg2ZCiD"
+    signing_salt: "NZIguRPO"
   ]
 
   socket "/socket", AcCatalogWeb.UserSocket,
     websocket: true,
     longpoll: false
 
-  socket "/live", Phoenix.LiveView.Socket,
-    websocket: [connect_info: [session: @session_options]]
+    socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
   #

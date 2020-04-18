@@ -1,0 +1,8 @@
+<form action="#" phx-submit="add">
+  <%= text_input :furniture, :name, placeholder: "Name" %>
+  <%= submit "Add", phx_disable_with: "Adding..." %>
+</form>
+
+<%= for furniture <- @furnitures do %>
+  <div><%= furniture.name %></div>
+<% end %>

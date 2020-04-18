@@ -21,13 +21,10 @@ defmodule AcCatalogWeb do
     quote do
       use Phoenix.Controller, namespace: AcCatalogWeb
 
-
-
       import Plug.Conn
       import AcCatalogWeb.Gettext
-
+      import Phoenix.LiveView.Controller, only: [live_render: 3]
       alias AcCatalogWeb.Router.Helpers, as: Routes
-      import Phoenix.LiveView.Controller
     end
   end
 
@@ -46,6 +43,7 @@ defmodule AcCatalogWeb do
       import AcCatalogWeb.ErrorHelpers
       import AcCatalogWeb.Gettext
       alias AcCatalogWeb.Router.Helpers, as: Routes
+
       import Phoenix.LiveView.Helpers
     end
   end
@@ -55,7 +53,6 @@ defmodule AcCatalogWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
-      import Phoenix.LiveView.Router
     end
   end
 

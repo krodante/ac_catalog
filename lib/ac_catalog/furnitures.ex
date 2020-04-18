@@ -8,6 +8,18 @@ defmodule AcCatalog.Furnitures do
 
   alias AcCatalog.Furnitures.Furniture
 
+  @topic inspect(__MODULE__)
+
+  def subscribe do
+    Phoenix.PubSub.subscribe(AcCatalog.PubSub, @topic)
+  end
+
+  defp broadcast_change({:ok, result}, event) do
+    Phoenix.PubSub.broadcast(AcCatalog.PubSub, @topic, {__MODULE__, event, result})
+
+    {:ok, result}
+  end
+
   @doc """
   Returns the list of furnitures.
 
@@ -53,6 +65,7 @@ defmodule AcCatalog.Furnitures do
     %Furniture{}
     |> Furniture.changeset(attrs)
     |> Repo.insert()
+    |> broadcast_change([:furniture, :created])
   end
 
   @doc """

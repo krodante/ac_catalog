@@ -1,5 +1,14 @@
 use Mix.Config
 
+# Configure your database
+config :ac_catalog, AcCatalog.Repo,
+  username: "postgres",
+  password: "postgres",
+  database: "ac_catalog_dev",
+  hostname: "localhost",
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -11,8 +20,15 @@ config :ac_catalog, AcCatalogWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/webpack/bin/webpack.js", "--mode", "development", "--watch-stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+  watchers: [
+    node: [
+      "node_modules/webpack/bin/webpack.js",
+      "--mode",
+      "development",
+      "--watch-stdin",
+      cd: Path.expand("../assets", __DIR__)
+    ]
+  ]
 
 # ## SSL Support
 #
@@ -42,10 +58,10 @@ config :ac_catalog, AcCatalogWeb.Endpoint,
 config :ac_catalog, AcCatalogWeb.Endpoint,
   live_reload: [
     patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{priv/gettext/.*(po)$},
-      ~r{lib/ac_catalog_web/views/.*(ex)$},
-      ~r{lib/ac_catalog_web/templates/.*(eex)$}
+      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/gettext/.*(po)$",
+      ~r"lib/ac_catalog_web/(live|views)/.*(ex)$",
+      ~r"lib/ac_catalog_web/templates/.*(eex)$"
     ]
   ]
 
@@ -58,11 +74,3 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
-
-# Configure your database
-config :ac_catalog, AcCatalog.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "ac_catalog_dev",
-  hostname: "localhost",
-  pool_size: 10

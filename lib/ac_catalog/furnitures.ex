@@ -95,10 +95,10 @@ defmodule AcCatalog.Furnitures do
   ## Examples
 
       iex> change_furniture(furniture)
-      %Ecto.Changeset{data: %Furniture{}}
+      %Ecto.Changeset{source: %Furniture{}}
 
   """
-  def change_furniture(%Furniture{} = furniture, attrs \\ %{}) do
-    Furniture.changeset(furniture, attrs)
+  def change_furniture(%Furniture{} = furniture) do
+    Furniture.changeset(furniture, %{})
   end
 end

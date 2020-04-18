@@ -1,10 +1,13 @@
 defmodule AcCatalogWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :ac_catalog
 
+  # The session will be stored in the cookie and signed,
+  # this means its contents can be read but not tampered with.
+  # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
     key: "_ac_catalog_key",
-    signing_salt: "xYYTrFy7"
+    signing_salt: "n6dUQlq4mgs8hBgbTMG4Tg1erAg2ZCiD"
   ]
 
   socket "/socket", AcCatalogWeb.UserSocket,
@@ -19,7 +22,9 @@ defmodule AcCatalogWeb.Endpoint do
   # You should set gzip to true if you are running phx.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :ac_catalog, gzip: false,
+    at: "/",
+    from: :ac_catalog,
+    gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -31,7 +36,7 @@ defmodule AcCatalogWeb.Endpoint do
   end
 
   plug Plug.RequestId
-  plug Plug.Logger
+  plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
@@ -40,11 +45,6 @@ defmodule AcCatalogWeb.Endpoint do
 
   plug Plug.MethodOverride
   plug Plug.Head
-
-  # The session will be stored in the cookie and signed,
-  # this means its contents can be read but not tampered with.
-  # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session, @session_options
-
   plug AcCatalogWeb.Router
 end

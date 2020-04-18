@@ -11,7 +11,7 @@ defmodule AcCatalog.Application do
       # Start the Ecto repository
       AcCatalog.Repo,
       # Start the endpoint when the application starts
-      AcCatalogWeb.Endpoint,
+      AcCatalogWeb.Endpoint
       # Starts a worker by calling: AcCatalog.Worker.start_link(arg)
       # {AcCatalog.Worker, arg},
     ]

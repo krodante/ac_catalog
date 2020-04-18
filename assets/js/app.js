@@ -15,7 +15,6 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
-// assets/js/app.js
 
 import {Socket} from "phoenix"
 import LiveSocket from "phoenix_live_view"

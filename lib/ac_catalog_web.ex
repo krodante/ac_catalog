@@ -21,17 +21,21 @@ defmodule AcCatalogWeb do
     quote do
       use Phoenix.Controller, namespace: AcCatalogWeb
 
+
+
       import Plug.Conn
       import AcCatalogWeb.Gettext
-      import Phoenix.LiveView.Controller
+
       alias AcCatalogWeb.Router.Helpers, as: Routes
+      import Phoenix.LiveView.Controller
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/ac_catalog_web/templates",
-                        namespace: AcCatalogWeb
+      use Phoenix.View,
+        root: "lib/ac_catalog_web/templates",
+        namespace: AcCatalogWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
@@ -41,8 +45,8 @@ defmodule AcCatalogWeb do
 
       import AcCatalogWeb.ErrorHelpers
       import AcCatalogWeb.Gettext
-      import Phoenix.LiveView.Helpers
       alias AcCatalogWeb.Router.Helpers, as: Routes
+      import Phoenix.LiveView.Helpers
     end
   end
 

@@ -44,6 +44,8 @@ defmodule AcCatalogWeb do
       import AcCatalogWeb.Gettext
       alias AcCatalogWeb.Router.Helpers, as: Routes
 
+      import AcCatalogWeb.Helpers.Auth, only: [signed_in?: 1]
+
       import Phoenix.LiveView.Helpers
     end
   end

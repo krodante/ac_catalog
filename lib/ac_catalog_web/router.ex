@@ -24,6 +24,10 @@ defmodule AcCatalogWeb.Router do
     # resources "/registrations", UserController
     resources "/registrations", UserController, only: [:create, :new]
 
+    get "/sign-in", SessionController, :new
+    post "/sign-in", SessionController, :create
+    delete "/sign-out", SessionController, :delete
+
     live "/furniture", FurnitureLive.Index
   end
 

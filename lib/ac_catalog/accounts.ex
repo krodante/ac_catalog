@@ -8,6 +8,10 @@ defmodule AcCatalog.Accounts do
 
   alias AcCatalog.Accounts.User
 
+  def get_by_username(username) when is_nil(username), do: nil
+
+  def get_by_username(username), do: Repo.get_by(User, username: username)
+
   @doc """
   Returns the list of users.
 

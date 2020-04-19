@@ -21,6 +21,9 @@ defmodule AcCatalogWeb.Router do
 
     get "/", PageController, :index
 
+    # resources "/registrations", UserController
+    resources "/registrations", UserController, only: [:create, :new]
+
     live "/furniture", FurnitureLive.Index
   end
 

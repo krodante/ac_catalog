@@ -1,1 +1,1 @@
-<%= link "Furniture", to: Routes.live_path(@conn, AcCatalogWeb.FurnitureLive) %>
+<%= link "Furniture", to: Routes.live_path(@conn, AcCatalogWeb.FurnitureLive.Index) %>

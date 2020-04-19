@@ -19,6 +19,6 @@ defmodule AcCatalog.Furnitures.Furniture do
   def changeset(furniture, attrs) do
     furniture
     |> cast(attrs, [:name, :category_id, :buy_price, :sell_price, :source_id, :variation, :customization_cost, :size])
-    # |> validate_required([:name, :category_id, :buy_price, :sell_price, :source_id, :variation, :customization_cost, :size])
+    |> validate_required([:name])
   end
 end

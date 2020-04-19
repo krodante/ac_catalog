@@ -1,0 +1,40 @@
+<h1>Listing Furnitures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Buy price</th>
+      <th>Sell price</th>
+      <th>Source</th>
+      <th>Variation</th>
+      <th>Customization cost</th>
+      <th>Size</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for furniture <- @furnitures do %>
+    <tr>
+      <td><%= furniture.name %></td>
+      <td><%= furniture.category_id %></td>
+      <td><%= furniture.buy_price %></td>
+      <td><%= furniture.sell_price %></td>
+      <td><%= furniture.source_id %></td>
+      <td><%= furniture.variation %></td>
+      <td><%= furniture.customization_cost %></td>
+      <td><%= furniture.size %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.furniture_path(@conn, :show, furniture) %></span>
+        <span><%= link "Edit", to: Routes.furniture_path(@conn, :edit, furniture) %></span>
+        <span><%= link "Delete", to: Routes.furniture_path(@conn, :delete, furniture), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Furniture", to: Routes.furniture_path(@conn, :new) %></span>

@@ -23,7 +23,7 @@ defmodule AcCatalogWeb do
 
       import Plug.Conn
       import AcCatalogWeb.Gettext
-      import Phoenix.LiveView.Controller, only: [live_render: 3]
+      # import Phoenix.LiveView.Controller, only: [live_render: 3]
       alias AcCatalogWeb.Router.Helpers, as: Routes
     end
   end
@@ -44,9 +44,7 @@ defmodule AcCatalogWeb do
       import AcCatalogWeb.Gettext
       alias AcCatalogWeb.Router.Helpers, as: Routes
 
-      import AcCatalogWeb.Helpers.Auth, only: [signed_in?: 1]
-
-      import Phoenix.LiveView.Helpers
+      # import Phoenix.LiveView.Helpers
     end
   end
 

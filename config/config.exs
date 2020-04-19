@@ -18,6 +18,10 @@ config :ac_catalog, AcCatalogWeb.Endpoint,
   pubsub: [name: AcCatalog.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [signing_salt: "n6dUQlq4mgs8hBgbTMG4Tg1erAg2ZCiD"]
 
+config :ac_catalog, :pow,
+  user: AcCatalog.Accounts.User,
+  repo: AcCatalog.Repo
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -25,8 +29,6 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
-
-config :phoenix, template_engines: [leex: Phoenix.LiveView.Engine]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

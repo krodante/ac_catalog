@@ -1,7 +1,6 @@
 defmodule AcCatalogWeb.Router do
   use AcCatalogWeb, :router
-
-  # import Phoenix.LiveView.Router
+  use Pow.Phoenix.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -12,8 +11,19 @@ defmodule AcCatalogWeb.Router do
     plug :put_root_layout, {AcCatalogWeb.LayoutView, :root}
   end
 
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/" do
+    pipe_through :browser
+
+    pow_routes()
   end
 
   scope "/", AcCatalogWeb do
@@ -21,14 +31,13 @@ defmodule AcCatalogWeb.Router do
 
     get "/", PageController, :index
 
-    # resources "/registrations", UserController
-    resources "/registrations", UserController, only: [:create, :new]
-
-    get "/sign-in", SessionController, :new
-    post "/sign-in", SessionController, :create
-    delete "/sign-out", SessionController, :delete
-
     resources "/furnitures", FurnitureController
+  end
+
+  scope "/", AcCatalogWeb do
+    pipe_through [:browser, :protected]
+
+    # Add your protected routes here
   end
 
   # Other scopes may use custom stacks.

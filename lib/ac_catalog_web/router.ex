@@ -31,7 +31,9 @@ defmodule AcCatalogWeb.Router do
 
     get "/", PageController, :index
 
-    resources "/furnitures", FurnitureController
+    # resources "/furnitures", FurnitureController
+
+    get "/furniture/housewares", FurnitureController, :housewares
   end
 
   scope "/", AcCatalogWeb do

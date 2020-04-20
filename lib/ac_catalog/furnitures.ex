@@ -21,6 +21,10 @@ defmodule AcCatalog.Furnitures do
     Repo.all(Furniture)
   end
 
+  def list_housewares do
+    Repo.all(AcCatalog.Housewares.Houseware)
+  end
+
   @doc """
   Gets a single furniture.
 

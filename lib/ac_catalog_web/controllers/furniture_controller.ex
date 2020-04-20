@@ -9,6 +9,11 @@ defmodule AcCatalogWeb.FurnitureController do
     render(conn, "index.html", furnitures: furnitures)
   end
 
+  def housewares(conn, _params) do
+    housewares = Furnitures.list_housewares()
+    render(conn, "index.html", furnitures: housewares, category: "Housewares")
+  end
+
   def new(conn, _params) do
     changeset = Furnitures.change_furniture(%Furniture{})
     render(conn, "new.html", changeset: changeset)

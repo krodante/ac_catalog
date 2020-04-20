@@ -33,23 +33,23 @@ defmodule AcCatalogWeb.Router do
 
     # resources "/furnitures", FurnitureController
 
-    get "/furniture/housewares", FurnitureController, :housewares
-    get "/furniture/floors", FurnitureController, :floors
-    get "/furniture/miscellaneous", FurnitureController, :miscellaneous
-    get "/furniture/music", FurnitureController, :music
-    get "/furniture/rugs", FurnitureController, :rugs
-    get "/furniture/wall_mounted", FurnitureController, :wall_mounted
-    get "/furniture/wallpaper", FurnitureController, :wallpaper
+    get "/furniture/housewares", FurnitureController, :housewares, as: :housewares
+    get "/furniture/floors", FurnitureController, :floors, as: :floors
+    get "/furniture/miscellaneous", FurnitureController, :miscellaneous, as: :miscellaneous
+    get "/furniture/music", FurnitureController, :music, as: :music
+    get "/furniture/rugs", FurnitureController, :rugs, as: :rugs
+    get "/furniture/wall_mounted", FurnitureController, :wall_mounted, as: :wall_mounted
+    get "/furniture/wallpaper", FurnitureController, :wallpaper, as: :wallpaper
 
-    get "/clothing/accessories", ClothingController, :accessories
-    get "/clothing/bags", ClothingController, :bags
-    get "/clothing/bottoms", ClothingController, :bottoms
-    get "/clothing/dresses", ClothingController, :dresses
-    get "/clothing/headwear", ClothingController, :headwear
-    get "/clothing/shoes", ClothingController, :shoes
-    get "/clothing/socks", ClothingController, :socks
-    get "/clothing/tops", ClothingController, :tops
-    get "/clothing/umbrellas", ClothingController, :umbrellas
+    get "/clothing/accessories", ClothingController, :accessories, as: :accessories
+    get "/clothing/bags", ClothingController, :bags, as: :bags
+    get "/clothing/bottoms", ClothingController, :bottoms, as: :bottoms
+    get "/clothing/dresses", ClothingController, :dresses, as: :dresses
+    get "/clothing/headwear", ClothingController, :headwear, as: :headwear
+    get "/clothing/shoes", ClothingController, :shoes, as: :shoes
+    get "/clothing/socks", ClothingController, :socks, as: :socks
+    get "/clothing/tops", ClothingController, :tops, as: :tops
+    get "/clothing/umbrellas", ClothingController, :umbrellas, as: :umbrellas
   end
 
   scope "/", AcCatalogWeb do
@@ -57,6 +57,9 @@ defmodule AcCatalogWeb.Router do
 
     put "/clothing/:category/add/:id", ClothingController, :add
     put "/clothing/:category/remove/:id", ClothingController, :remove
+
+    put "/furniture/:category/add/:id", FurnitureController, :add
+    put "/furniture/:category/remove/:id", FurnitureController, :remove
 
     # Add your protected routes here
   end

@@ -8,10 +8,14 @@ defmodule AcCatalogWeb.ClothingController do
 
   defp reload_user(conn, _opts) do
     config        = Pow.Plug.fetch_config(conn)
-    user          = Pow.Plug.current_user(conn, config)
-    reloaded_user = AcCatalog.Repo.get!(AcCatalog.Accounts.User, user.id)
+    user          =
+    case Pow.Plug.current_user(conn, config) do
+      nil -> conn
+      user ->
+        reloaded_user = AcCatalog.Repo.get!(AcCatalog.Accounts.User, user.id)
 
-    Pow.Plug.assign_current_user(conn, reloaded_user, config)
+        Pow.Plug.assign_current_user(conn, reloaded_user, config)
+    end
   end
 
   def add(conn, params) do
@@ -69,12 +73,14 @@ defmodule AcCatalogWeb.ClothingController do
 
   def accessories(conn, _params) do
     accessories = AcCatalog.Accessories.list_accessories()
-    render(conn, "index.html", clothing: accessories, category: "accessories")
+    table_name = "accessories"
+    render(conn, "index.html", clothing: accessories, category: "accessories", table_name: table_name)
   end
 
   def bags(conn, _params) do
     bags = AcCatalog.Bags.list_bags()
-    render(conn, "index.html", clothing: bags, category: "bags")
+    table_name = "bags"
+    render(conn, "index.html", clothing: bags, category: "bags", table_name: table_name)
   end
 
   def bottoms(conn, _params) do

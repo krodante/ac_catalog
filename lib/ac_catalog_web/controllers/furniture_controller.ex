@@ -4,6 +4,68 @@ defmodule AcCatalogWeb.FurnitureController do
   alias AcCatalog.Furnitures
   alias AcCatalog.Furnitures.Furniture
 
+  plug :reload_user
+
+  defp reload_user(conn, _opts) do
+    config        = Pow.Plug.fetch_config(conn)
+    user          =
+    case Pow.Plug.current_user(conn, config) do
+      nil -> conn
+      user ->
+        reloaded_user = AcCatalog.Repo.get!(AcCatalog.Accounts.User, user.id)
+
+        Pow.Plug.assign_current_user(conn, reloaded_user, config)
+    end
+  end
+
+  def add(conn, params) do
+    category = params["category"]
+    id = params["id"]
+    current_user = conn.assigns.current_user
+
+    category_column = String.to_atom("owned_#{category}_ids")
+
+    owned_ids = Map.get(current_user, category_column)
+
+    new_data = Map.new(
+      [
+        {category_column, owned_ids ++ [id]}
+      ]
+    )
+
+    changeset = AcCatalog.Accounts.User.changeset(current_user, new_data)
+
+    {:ok, user} = AcCatalog.Repo.update(changeset)
+
+    conn
+    |> put_flash(:info, "Furniture updated successfully.")
+    |> redirect(to: "/furniture/#{category}")
+  end
+
+  def remove(conn, params) do
+    category = params["category"]
+    id = String.to_integer(params["id"])
+    current_user = conn.assigns.current_user
+
+    category_column = String.to_atom("owned_#{category}_ids")
+
+    owned_ids = Map.get(current_user, category_column)
+
+    new_data = Map.new(
+      [
+        {category_column, owned_ids -- [id]}
+      ]
+    )
+
+    changeset = AcCatalog.Accounts.User.changeset(current_user, new_data)
+
+    {:ok, user} = AcCatalog.Repo.update(changeset)
+
+    conn
+    |> put_flash(:info, "Furniture updated successfully.")
+    |> redirect(to: "/furniture/#{category}")
+  end
+
   def index(conn, _params) do
     furnitures = Furnitures.list_furnitures()
     render(conn, "index.html", furnitures: furnitures)
@@ -11,37 +73,44 @@ defmodule AcCatalogWeb.FurnitureController do
 
   def housewares(conn, _params) do
     housewares = AcCatalog.Housewares.list_housewares()
-    render(conn, "index.html", furnitures: housewares, category: "Housewares")
+    table_name = "housewares"
+    render(conn, "index.html", furnitures: housewares, category: "housewares", table_name: table_name)
   end
 
   def floors(conn, _params) do
     floors = AcCatalog.Floors.list_floors()
-    render(conn, "index.html", furnitures: floors, category: "Floors")
+    table_name = "floors"
+    render(conn, "index.html", furnitures: floors, category: "floors", table_name: table_name)
   end
 
   def miscellaneous(conn, _params) do
     miscellaneous = AcCatalog.MiscFurnitures.list_misc_furniture()
-    render(conn, "index.html", furnitures: miscellaneous, category: "Miscellaneous")
+    table_name = "misc_furnitures"
+    render(conn, "index.html", furnitures: miscellaneous, category: "miscellaneous", table_name: table_name)
   end
 
   def music(conn, _params) do
     music = AcCatalog.Musics.list_musics()
-    render(conn, "index.html", furnitures: music, category: "Music")
+    table_name = "musics"
+    render(conn, "index.html", furnitures: music, category: "music", table_name: table_name)
   end
 
   def rugs(conn, _params) do
     rugs = AcCatalog.Rugs.list_rugs()
-    render(conn, "index.html", furnitures: rugs, category: "Rugs")
+    table_name = "rugs"
+    render(conn, "index.html", furnitures: rugs, category: "rugs", table_name: table_name)
   end
 
   def wall_mounted(conn, _params) do
     wall_mounteds = AcCatalog.WallMounteds.list_wall_mounteds()
-    render(conn, "index.html", furnitures: wall_mounteds, category: "Wall-Mounted")
+    table_name = "wall_mounteds"
+    render(conn, "index.html", furnitures: wall_mounteds, category: "wall-mounted", table_name: table_name)
   end
 
   def wallpaper(conn, _params) do
     wallpapers = AcCatalog.Wallpapers.list_wallpapers()
-    render(conn, "index.html", furnitures: wallpapers, category: "Wallpaper")
+    table_name = "wallpapers"
+    render(conn, "index.html", furnitures: wallpapers, category: "wallpaper", table_name: table_name)
   end
 
   def new(conn, _params) do

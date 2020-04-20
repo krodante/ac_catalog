@@ -3,7 +3,9 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
+      <th>Variation</th>
       <th>Buy price</th>
       <th>Sell price</th>
       <th>Source</th>
@@ -16,23 +18,15 @@
 <%= for clothing <- @clothing do %>
   <% source = AcCatalog.Sources.get_source!(clothing.source_id) %>
     <tr>
+      <td><%= img_tag("https://storage.googleapis.com/acdb/#{@category}/#{clothing.filename}.png", class: "item") %></td>
       <td><%= clothing.name %></td>
+      <td><%= clothing.variation %></td>
       <td><%= clothing.buy_price %></td>
       <td><%= clothing.sell_price %></td>
       <td><%= source.name %></td>
 
       <td>
-        <%= if owned?(@conn, clothing.id, @table_name) do %>
-          <%= img_tag(Routes.static_path(@conn, "/images/green-check-icon.png"), class: "icon") %>
-          <span>
-            <%= link "Remove", to: "/clothing/#{@category}/remove/#{clothing.id}", method: :put %>
-          </span>
-        <% else %>
-          <%= img_tag(Routes.static_path(@conn, "/images/red-x-icon.png"), class: "icon") %>
-          <span>
-            <%= link "Add", to: "/clothing/#{@category}/add/#{clothing.id}", method: :put %>
-          </span>
-        <% end %>
+        <%= show_owned(@conn, clothing.id, @table_name) %>
       </td>
     </tr>
 <% end %>

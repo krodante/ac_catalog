@@ -1,4 +1,4 @@
-<h1>Listing <%= @category%> </h1>
+<h1>Listing <%= String.capitalize(@category) %> </h1>
 
 <table>
   <thead>
@@ -22,7 +22,17 @@
       <td><%= source.name %></td>
 
       <td>
-        TBD
+        <%= if owned?(@conn, clothing.id, @table_name) do %>
+          <%= img_tag(Routes.static_path(@conn, "/images/green-check-icon.png"), class: "icon") %>
+          <span>
+            Remove
+          </span>
+        <% else %>
+          <%= img_tag(Routes.static_path(@conn, "/images/red-x-icon.png"), class: "icon") %>
+          <span>
+            <%= link "Add", to: "/clothing/#{@category}/add/#{clothing.id}", method: :put %>
+          </span>
+        <% end %>
       </td>
     </tr>
 <% end %>

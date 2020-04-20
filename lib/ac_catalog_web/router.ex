@@ -55,6 +55,8 @@ defmodule AcCatalogWeb.Router do
   scope "/", AcCatalogWeb do
     pipe_through [:browser, :protected]
 
+    put "/clothing/:category/add/:id", ClothingController, :add
+
     # Add your protected routes here
   end
 

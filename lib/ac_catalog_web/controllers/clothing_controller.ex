@@ -4,54 +4,95 @@ defmodule AcCatalogWeb.ClothingController do
   alias AcCatalog.Clothings
   alias AcCatalog.Clothings.Clothing
 
+  plug :reload_user
+
+  defp reload_user(conn, _opts) do
+    config        = Pow.Plug.fetch_config(conn)
+    user          = Pow.Plug.current_user(conn, config)
+    reloaded_user = AcCatalog.Repo.get!(AcCatalog.Accounts.User, user.id)
+
+    Pow.Plug.assign_current_user(conn, reloaded_user, config)
+  end
+
+  def add(conn, params) do
+    category = params["category"]
+    id = params["id"]
+    current_user = conn.assigns.current_user
+
+    category_column = String.to_atom("owned_#{category}_ids")
+
+    owned_ids = Map.get(current_user, category_column)
+
+    new_data = Map.new(
+      [
+        {category_column, owned_ids ++ [id]}
+      ]
+    )
+
+    changeset = AcCatalog.Accounts.User.changeset(current_user, new_data)
+
+    {:ok, user} = AcCatalog.Repo.update(changeset)
+
+    conn
+    |> put_flash(:info, "Clothing updated successfully.")
+    |> redirect(to: "/clothing/#{category}")
+  end
+
   def index(conn, _params) do
     clothings = Clothings.list_clothings()
-    render(conn, "index.html", clothings: clothings)
+    render(conn, "index.html", clothing: clothings)
   end
 
   def accessories(conn, _params) do
     accessories = AcCatalog.Accessories.list_accessories()
-    render(conn, "index.html", clothing: accessories, category: "Accessories")
+    render(conn, "index.html", clothing: accessories, category: "accessories")
   end
 
   def bags(conn, _params) do
     bags = AcCatalog.Bags.list_bags()
-    render(conn, "index.html", clothing: bags, category: "Bags")
+    render(conn, "index.html", clothing: bags, category: "bags")
   end
 
   def bottoms(conn, _params) do
     bottoms = AcCatalog.Bottoms.list_bottoms()
-    render(conn, "index.html", clothing: bottoms, category: "Bottoms")
+    table_name = "bottoms"
+    render(conn, "index.html", clothing: bottoms, category: "bottoms", table_name: table_name)
   end
 
   def dresses(conn, _params) do
     dresses = AcCatalog.Dresses.list_dresses()
-    render(conn, "index.html", clothing: dresses, category: "Dresses")
+    table_name = "dresses"
+    render(conn, "index.html", clothing: dresses, category: "dresses", table_name: table_name)
   end
 
   def headwear(conn, _params) do
     headwear = AcCatalog.Headwears.list_headwears()
-    render(conn, "index.html", clothing: headwear, category: "Headwear")
+    table_name = "headwears"
+    render(conn, "index.html", clothing: headwear, category: "headwear", table_name: table_name)
   end
 
   def shoes(conn, _params) do
     shoes = AcCatalog.Shoes.list_shoes()
-    render(conn, "index.html", clothing: shoes, category: "Shoes")
+    table_name = "shoes"
+    render(conn, "index.html", clothing: shoes, category: "shoes", table_name: table_name)
   end
 
   def socks(conn, _params) do
     socks = AcCatalog.Socks.list_socks()
-    render(conn, "index.html", clothing: socks, category: "Socks")
+    table_name = "socks"
+    render(conn, "index.html", clothing: socks, category: "socks", table_name: table_name)
   end
 
   def tops(conn, _params) do
     tops = AcCatalog.Tops.list_tops()
-    render(conn, "index.html", clothing: tops, category: "Tops")
+    table_name = "tops"
+    render(conn, "index.html", clothing: tops, category: "tops", table_name: table_name)
   end
 
   def umbrellas(conn, _params) do
     umbrellas = AcCatalog.Umbrellas.list_umbrellas()
-    render(conn, "index.html", clothing: umbrellas, category: "Umbrellas")
+    table_name = "umbrellas"
+    render(conn, "index.html", clothing: umbrellas, category: "umbrellas", table_name: table_name)
   end
 
   def new(conn, _params) do

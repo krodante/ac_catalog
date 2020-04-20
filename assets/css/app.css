@@ -1,3 +1,13 @@
 /* This file is for your main application css. */
 
 @import "./phoenix.css";
+
+* {
+  background-color: rgb(300, 300, 300);
+}
+
+.icon {
+  background-color: white;
+  height: 20px;
+  width: 20px;
+}

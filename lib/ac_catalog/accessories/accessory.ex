@@ -8,7 +8,6 @@ defmodule AcCatalog.Accessories.Accessory do
     field :name, :string
     field :sell_price, :integer
     field :source_id, :integer
-    field :style_id, :integer
     field :variation, :string
 
     timestamps()
@@ -17,7 +16,7 @@ defmodule AcCatalog.Accessories.Accessory do
   @doc false
   def changeset(accessory, attrs) do
     accessory
-    |> cast(attrs, [:name, :variation, :buy_price, :sell_price, :source_id, :style_id, :filename])
-    |> validate_required([:name, :variation, :buy_price, :sell_price, :source_id, :style_id, :filename])
+    |> cast(attrs, [:name, :variation, :buy_price, :sell_price, :source_id, :filename])
+    |> validate_required([:name, :variation, :buy_price, :sell_price, :source_id, :filename])
   end
 end

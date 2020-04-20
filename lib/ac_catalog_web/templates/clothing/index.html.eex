@@ -1,0 +1,31 @@
+<h1>Listing <%= @category%> </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Buy price</th>
+      <th>Sell price</th>
+      <th>Source</th>
+
+
+      <th>Owned?</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for clothing <- @clothing do %>
+  <% source = AcCatalog.Sources.get_source!(clothing.source_id) %>
+    <tr>
+      <td><%= clothing.name %></td>
+      <td><%= clothing.buy_price %></td>
+      <td><%= clothing.sell_price %></td>
+      <td><%= source.name %></td>
+
+      <td>
+        TBD
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+

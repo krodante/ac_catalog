@@ -8,7 +8,6 @@ defmodule AcCatalog.Bags.Bag do
     field :name, :string
     field :sell_price, :integer
     field :source_id, :integer
-    field :style_id, :integer
 
     timestamps()
   end
@@ -16,7 +15,7 @@ defmodule AcCatalog.Bags.Bag do
   @doc false
   def changeset(bag, attrs) do
     bag
-    |> cast(attrs, [:name, :buy_price, :sell_price, :source_id, :style_id, :filename])
-    |> validate_required([:name, :buy_price, :sell_price, :source_id, :style_id, :filename])
+    |> cast(attrs, [:name, :buy_price, :sell_price, :source_id, :filename])
+    |> validate_required([:name, :buy_price, :sell_price, :source_id, :filename])
   end
 end

@@ -20,7 +20,7 @@ defmodule AcCatalogWeb.FurnitureController do
   end
 
   def miscellaneous(conn, _params) do
-    miscellaneous = AcCatalog.MiscFurnitures.list_misc_furnitures()
+    miscellaneous = AcCatalog.MiscFurnitures.list_misc_furniture()
     render(conn, "index.html", furnitures: miscellaneous, category: "Miscellaneous")
   end
 

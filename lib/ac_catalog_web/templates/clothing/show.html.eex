@@ -1,0 +1,43 @@
+<h1>Show Clothing</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @clothing.name %>
+  </li>
+
+  <li>
+    <strong>Buy price:</strong>
+    <%= @clothing.buy_price %>
+  </li>
+
+  <li>
+    <strong>Sell price:</strong>
+    <%= @clothing.sell_price %>
+  </li>
+
+  <li>
+    <strong>Source:</strong>
+    <%= @clothing.source_id %>
+  </li>
+
+  <li>
+    <strong>Style:</strong>
+    <%= @clothing.style_id %>
+  </li>
+
+  <li>
+    <strong>Variation:</strong>
+    <%= @clothing.variation %>
+  </li>
+
+  <li>
+    <strong>Filename:</strong>
+    <%= @clothing.filename %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.clothing_path(@conn, :edit, @clothing) %></span>
+<span><%= link "Back", to: Routes.clothing_path(@conn, :index) %></span>

@@ -40,6 +40,16 @@ defmodule AcCatalogWeb.Router do
     get "/furniture/rugs", FurnitureController, :rugs
     get "/furniture/wall_mounted", FurnitureController, :wall_mounted
     get "/furniture/wallpaper", FurnitureController, :wallpaper
+
+    get "/clothing/accessories", ClothingController, :accessories
+    get "/clothing/bags", ClothingController, :bags
+    get "/clothing/bottoms", ClothingController, :bottoms
+    get "/clothing/dresses", ClothingController, :dresses
+    get "/clothing/headwear", ClothingController, :headwear
+    get "/clothing/shoes", ClothingController, :shoes
+    get "/clothing/socks", ClothingController, :socks
+    get "/clothing/tops", ClothingController, :tops
+    get "/clothing/umbrellas", ClothingController, :umbrellas
   end
 
   scope "/", AcCatalogWeb do

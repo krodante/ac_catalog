@@ -9,7 +9,7 @@ defmodule AcCatalogWeb.FurnitureView do
 
         owned_ids = Map.get(current_user, category_column)
 
-        case owned?(current_user, table_name, furniture_id) do
+        case owned?(owned_ids, furniture_id) do
           true ->
             content_tag(:div) do
               [
@@ -32,11 +32,5 @@ defmodule AcCatalogWeb.FurnitureView do
     end
   end
 
-  def owned?(current_user, table_name, furniture_id) do
-    category_column = String.to_atom("owned_#{table_name}_ids")
-
-    owned_ids = Map.get(current_user, category_column)
-
-    Enum.member?(owned_ids, furniture_id)
-  end
+  def owned?(owned_ids, clothing_id), do: Enum.member?(owned_ids, clothing_id)
 end

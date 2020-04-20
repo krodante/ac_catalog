@@ -45,6 +45,9 @@ defmodule AcCatalog.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:pow, "~> 1.0.7"},
       {:csv, "~> 2.3"},
+      {:bamboo, "~> 1.4"},
+      {:bamboo_smtp, "~> 2.1.0"},
+      {:navigation_history, "~> 0.3"}
     ]
   end
 

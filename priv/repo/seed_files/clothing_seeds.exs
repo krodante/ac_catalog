@@ -15,11 +15,6 @@ defmodule SeedHelper do
     {:ok, source} = AcCatalog.Sources.get_or_insert_by_name(source)
     source.id
   end
-
-  def get_style_id(style) do
-    {:ok, style} = AcCatalog.Styles.get_or_insert_by_name(style)
-    style.id
-  end
 end
 
 # Import Tops
@@ -29,9 +24,7 @@ File.stream!("priv/static/data/tops.csv")
 
   row
   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.put("style_id", SeedHelper.get_style_id(row["style"]))
   |> Map.delete("source")
-  |> Map.delete("style")
   |> AcCatalog.Tops.create_top
 end)
 
@@ -42,9 +35,7 @@ File.stream!("priv/static/data/bottoms.csv")
 
   row
   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.put("style_id", SeedHelper.get_style_id(row["style"]))
   |> Map.delete("source")
-  |> Map.delete("style")
   |> AcCatalog.Bottoms.create_bottom
 end)
 
@@ -55,9 +46,7 @@ File.stream!("priv/static/data/dresses.csv")
 
   row
   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.put("style_id", SeedHelper.get_style_id(row["style"]))
   |> Map.delete("source")
-  |> Map.delete("style")
   |> AcCatalog.Dresses.create_dress
 end)
 
@@ -68,9 +57,7 @@ File.stream!("priv/static/data/headwear.csv")
 
   row
   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.put("style_id", SeedHelper.get_style_id(row["style"]))
   |> Map.delete("source")
-  |> Map.delete("style")
   |> AcCatalog.Headwears.create_headwear
 end)
 
@@ -81,9 +68,7 @@ File.stream!("priv/static/data/accessories.csv")
 
   row
   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.put("style_id", SeedHelper.get_style_id(row["style"]))
   |> Map.delete("source")
-  |> Map.delete("style")
   |> AcCatalog.Accessories.create_accessory
 end)
 
@@ -94,9 +79,7 @@ File.stream!("priv/static/data/socks.csv")
 
   row
   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.put("style_id", SeedHelper.get_style_id(row["style"]))
   |> Map.delete("source")
-  |> Map.delete("style")
   |> AcCatalog.Socks.create_sock
 end)
 
@@ -107,9 +90,7 @@ File.stream!("priv/static/data/shoes.csv")
 
   row
   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.put("style_id", SeedHelper.get_style_id(row["style"]))
   |> Map.delete("source")
-  |> Map.delete("style")
   |> AcCatalog.Shoes.create_shoe
 end)
 
@@ -120,9 +101,7 @@ File.stream!("priv/static/data/bags.csv")
 
   row
   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.put("style_id", SeedHelper.get_style_id(row["style"]))
   |> Map.delete("source")
-  |> Map.delete("style")
   |> AcCatalog.Bags.create_bag
 end)
 

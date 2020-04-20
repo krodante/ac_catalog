@@ -8,7 +8,7 @@ defmodule AcCatalogWeb.ClothingController do
 
   defp reload_user(conn, _opts) do
     config        = Pow.Plug.fetch_config(conn)
-    user          =
+
     case Pow.Plug.current_user(conn, config) do
       nil -> conn
       user ->
@@ -33,9 +33,9 @@ defmodule AcCatalogWeb.ClothingController do
       ]
     )
 
-    changeset = AcCatalog.Accounts.User.changeset(current_user, new_data)
+    changeset = AcCatalog.Accounts.User.item_changeset(current_user, new_data)
 
-    {:ok, user} = AcCatalog.Repo.update(changeset)
+    {:ok, _user} = AcCatalog.Repo.update(changeset)
 
     conn
     |> put_flash(:info, "Clothing updated successfully.")
@@ -57,9 +57,9 @@ defmodule AcCatalogWeb.ClothingController do
       ]
     )
 
-    changeset = AcCatalog.Accounts.User.changeset(current_user, new_data)
+    changeset = AcCatalog.Accounts.User.item_changeset(current_user, new_data)
 
-    {:ok, user} = AcCatalog.Repo.update(changeset)
+    {:ok, _user} = AcCatalog.Repo.update(changeset)
 
     conn
     |> put_flash(:info, "Clothing updated successfully.")
@@ -130,17 +130,17 @@ defmodule AcCatalogWeb.ClothingController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"clothing" => clothing_params}) do
-    case Clothings.create_clothing(clothing_params) do
-      {:ok, clothing} ->
-        conn
-        |> put_flash(:info, "Clothing created successfully.")
-        |> redirect(to: Routes.clothing_path(conn, :show, clothing))
+  # def create(conn, %{"clothing" => clothing_params}) do
+  #   case Clothings.create_clothing(clothing_params) do
+  #     {:ok, clothing} ->
+  #       conn
+  #       |> put_flash(:info, "Clothing created successfully.")
+  #       |> redirect(to: Routes.clothing_path(conn, :show, clothing))
 
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
-    end
-  end
+  #     {:error, %Ecto.Changeset{} = changeset} ->
+  #       render(conn, "new.html", changeset: changeset)
+  #   end
+  # end
 
   def show(conn, %{"id" => id}) do
     clothing = Clothings.get_clothing!(id)
@@ -153,26 +153,26 @@ defmodule AcCatalogWeb.ClothingController do
     render(conn, "edit.html", clothing: clothing, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "clothing" => clothing_params}) do
-    clothing = Clothings.get_clothing!(id)
+  # def update(conn, %{"id" => id, "clothing" => clothing_params}) do
+  #   clothing = Clothings.get_clothing!(id)
 
-    case Clothings.update_clothing(clothing, clothing_params) do
-      {:ok, clothing} ->
-        conn
-        |> put_flash(:info, "Clothing updated successfully.")
-        |> redirect(to: Routes.clothing_path(conn, :show, clothing))
+  #   case Clothings.update_clothing(clothing, clothing_params) do
+  #     {:ok, clothing} ->
+  #       conn
+  #       |> put_flash(:info, "Clothing updated successfully.")
+  #       |> redirect(to: Routes.clothing_path(conn, :show, clothing))
 
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", clothing: clothing, changeset: changeset)
-    end
-  end
+  #     {:error, %Ecto.Changeset{} = changeset} ->
+  #       render(conn, "edit.html", clothing: clothing, changeset: changeset)
+  #   end
+  # end
 
-  def delete(conn, %{"id" => id}) do
-    clothing = Clothings.get_clothing!(id)
-    {:ok, _clothing} = Clothings.delete_clothing(clothing)
+  # def delete(conn, %{"id" => id}) do
+  #   clothing = Clothings.get_clothing!(id)
+  #   {:ok, _clothing} = Clothings.delete_clothing(clothing)
 
-    conn
-    |> put_flash(:info, "Clothing deleted successfully.")
-    |> redirect(to: Routes.clothing_path(conn, :index))
-  end
+  #   conn
+  #   |> put_flash(:info, "Clothing deleted successfully.")
+  #   |> redirect(to: Routes.clothing_path(conn, :index))
+  # end
 end

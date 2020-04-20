@@ -7,8 +7,8 @@ defmodule AcCatalogWeb.FurnitureController do
   plug :reload_user
 
   defp reload_user(conn, _opts) do
-    config        = Pow.Plug.fetch_config(conn)
-    user          =
+    config = Pow.Plug.fetch_config(conn)
+
     case Pow.Plug.current_user(conn, config) do
       nil -> conn
       user ->
@@ -33,9 +33,9 @@ defmodule AcCatalogWeb.FurnitureController do
       ]
     )
 
-    changeset = AcCatalog.Accounts.User.changeset(current_user, new_data)
+    changeset = AcCatalog.Accounts.User.item_changeset(current_user, new_data)
 
-    {:ok, user} = AcCatalog.Repo.update(changeset)
+    {:ok, _user} = AcCatalog.Repo.update(changeset)
 
     conn
     |> put_flash(:info, "Furniture updated successfully.")
@@ -57,9 +57,9 @@ defmodule AcCatalogWeb.FurnitureController do
       ]
     )
 
-    changeset = AcCatalog.Accounts.User.changeset(current_user, new_data)
+    changeset = AcCatalog.Accounts.User.item_changeset(current_user, new_data)
 
-    {:ok, user} = AcCatalog.Repo.update(changeset)
+    {:ok, _user} = AcCatalog.Repo.update(changeset)
 
     conn
     |> put_flash(:info, "Furniture updated successfully.")
@@ -118,17 +118,17 @@ defmodule AcCatalogWeb.FurnitureController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"furniture" => furniture_params}) do
-    case Furnitures.create_furniture(furniture_params) do
-      {:ok, furniture} ->
-        conn
-        |> put_flash(:info, "Furniture created successfully.")
-        |> redirect(to: Routes.furniture_path(conn, :show, furniture))
+  # def create(conn, %{"furniture" => furniture_params}) do
+  #   case Furnitures.create_furniture(furniture_params) do
+  #     {:ok, furniture} ->
+  #       conn
+  #       |> put_flash(:info, "Furniture created successfully.")
+  #       |> redirect(to: Routes.furniture_path(conn, :show, furniture))
 
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
-    end
-  end
+  #     {:error, %Ecto.Changeset{} = changeset} ->
+  #       render(conn, "new.html", changeset: changeset)
+  #   end
+  # end
 
   def show(conn, %{"id" => id}) do
     furniture = Furnitures.get_furniture!(id)
@@ -141,26 +141,26 @@ defmodule AcCatalogWeb.FurnitureController do
     render(conn, "edit.html", furniture: furniture, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "furniture" => furniture_params}) do
-    furniture = Furnitures.get_furniture!(id)
+  # def update(conn, %{"id" => id, "furniture" => furniture_params}) do
+  #   furniture = Furnitures.get_furniture!(id)
 
-    case Furnitures.update_furniture(furniture, furniture_params) do
-      {:ok, furniture} ->
-        conn
-        |> put_flash(:info, "Furniture updated successfully.")
-        |> redirect(to: Routes.furniture_path(conn, :show, furniture))
+  #   case Furnitures.update_furniture(furniture, furniture_params) do
+  #     {:ok, furniture} ->
+  #       conn
+  #       |> put_flash(:info, "Furniture updated successfully.")
+  #       |> redirect(to: Routes.furniture_path(conn, :show, furniture))
 
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", furniture: furniture, changeset: changeset)
-    end
-  end
+  #     {:error, %Ecto.Changeset{} = changeset} ->
+  #       render(conn, "edit.html", furniture: furniture, changeset: changeset)
+  #   end
+  # end
 
-  def delete(conn, %{"id" => id}) do
-    furniture = Furnitures.get_furniture!(id)
-    {:ok, _furniture} = Furnitures.delete_furniture(furniture)
+  # def delete(conn, %{"id" => id}) do
+  #   furniture = Furnitures.get_furniture!(id)
+  #   {:ok, _furniture} = Furnitures.delete_furniture(furniture)
 
-    conn
-    |> put_flash(:info, "Furniture deleted successfully.")
-    |> redirect(to: Routes.furniture_path(conn, :index))
-  end
+  #   conn
+  #   |> put_flash(:info, "Furniture deleted successfully.")
+  #   |> redirect(to: Routes.furniture_path(conn, :index))
+  # end
 end

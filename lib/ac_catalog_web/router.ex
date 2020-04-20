@@ -1,6 +1,8 @@
 defmodule AcCatalogWeb.Router do
   use AcCatalogWeb, :router
   use Pow.Phoenix.Router
+  use Pow.Extension.Phoenix.Router,
+    extensions: [PowResetPassword, PowEmailConfirmation]
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -9,6 +11,7 @@ defmodule AcCatalogWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :put_root_layout, {AcCatalogWeb.LayoutView, :root}
+    plug NavigationHistory.Tracker, excluded_paths: [~r(/session.*)]
   end
 
   pipeline :protected do
@@ -24,14 +27,13 @@ defmodule AcCatalogWeb.Router do
     pipe_through :browser
 
     pow_routes()
+    pow_extension_routes()
   end
 
   scope "/", AcCatalogWeb do
     pipe_through :browser
 
     get "/", PageController, :index
-
-    # resources "/furnitures", FurnitureController
 
     get "/furniture/housewares", FurnitureController, :housewares, as: :housewares
     get "/furniture/floors", FurnitureController, :floors, as: :floors
@@ -60,8 +62,6 @@ defmodule AcCatalogWeb.Router do
 
     put "/furniture/:category/add/:id", FurnitureController, :add
     put "/furniture/:category/remove/:id", FurnitureController, :remove
-
-    # Add your protected routes here
   end
 
   # Other scopes may use custom stacks.

@@ -20,7 +20,7 @@
     <tr>
       <td><%= img_tag("https://storage.googleapis.com/acdb/#{@category}/#{clothing.filename}.png", class: "item") %></td>
       <td><%= clothing.name %></td>
-      <td><%= clothing.variation %></td>
+      <td><%= if has_variation?(clothing), do: clothing.variation, else: "N/A" %></td>
       <td><%= clothing.buy_price %></td>
       <td><%= clothing.sell_price %></td>
       <td><%= source.name %></td>

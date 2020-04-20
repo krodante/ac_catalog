@@ -1,7 +1,6 @@
 defmodule AcCatalogWeb.ClothingView do
   use AcCatalogWeb, :view
   use Phoenix.HTML
-  import AcCatalogWeb.Router.Helpers, only: [static_path: 2]
 
   def show_owned(conn, clothing_id, table_name) do
     case Pow.Plug.current_user(conn) do
@@ -11,7 +10,7 @@ defmodule AcCatalogWeb.ClothingView do
 
         owned_ids = Map.get(current_user, category_column)
 
-        case owned?(current_user, table_name, clothing_id) do
+        case owned?(owned_ids, clothing_id) do
           true ->
             content_tag(:div) do
               [
@@ -34,11 +33,7 @@ defmodule AcCatalogWeb.ClothingView do
     end
   end
 
-  def owned?(current_user, table_name, clothing_id) do
-    category_column = String.to_atom("owned_#{table_name}_ids")
+  def owned?(owned_ids, clothing_id), do: Enum.member?(owned_ids, clothing_id)
 
-    owned_ids = Map.get(current_user, category_column)
-
-    Enum.member?(owned_ids, clothing_id)
-  end
+  def has_variation?(clothing), do: Map.has_key?(clothing, :variation)
 end

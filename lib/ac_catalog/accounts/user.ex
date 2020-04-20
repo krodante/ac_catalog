@@ -1,7 +1,10 @@
 defmodule AcCatalog.Accounts.User do
   use Ecto.Schema
-  import Ecto.Changeset
   use Pow.Ecto.Schema
+  use Pow.Extension.Ecto.Schema,
+    extensions: [PowResetPassword, PowEmailConfirmation]
+
+  import Ecto.Changeset
 
   schema "users" do
     pow_user_fields()
@@ -27,11 +30,17 @@ defmodule AcCatalog.Accounts.User do
     timestamps()
   end
 
-  def changeset(user_or_changeset, attrs) do
+  def item_changeset(user_or_changeset, attrs) do
     user_or_changeset
     |> cast(attrs, [:owned_accessories_ids, :owned_bags_ids, :owned_bottoms_ids, :owned_dresses_ids,
       :owned_headwears_ids, :owned_shoes_ids, :owned_socks_ids, :owned_tops_ids, :owned_umbrellas_ids,
       :owned_floors_ids, :owned_housewares_ids, :owned_misc_furnitures_ids, :owned_musics_ids,
       :owned_rugs_ids, :owned_wall_mounteds_ids, :owned_wallpapers_ids])
+  end
+
+  def changeset(user_or_changeset, attrs) do
+    user_or_changeset
+    |> pow_changeset(attrs)
+    |> pow_extension_changeset(attrs)
   end
 end

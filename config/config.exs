@@ -20,7 +20,23 @@ config :ac_catalog, AcCatalogWeb.Endpoint,
 
 config :ac_catalog, :pow,
   user: AcCatalog.Accounts.User,
-  repo: AcCatalog.Repo
+  repo: AcCatalog.Repo,
+  extensions: [PowResetPassword, PowEmailConfirmation],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  mailer_backend: AcCatalogWeb.Pow.Mailer,
+  web_mailer_module: AcCatalogWeb,
+  routes_backend: AcCatalogWeb.Pow.Routes
+
+config :ac_catalog, AcCatalogWeb.Pow.Mailer,
+  adapter: Bamboo.SMTPAdapter,
+  server: "smtp.gmail.com",
+  port: 587,
+  username: {:system, "SMTP_USERNAME"},
+  password: {:system, "SMTP_PASSWORD"},
+  tls: :if_available, # can be `:always` or `:never`
+  allowed_tls_versions: [:tlsv1, :"tlsv1.1", :"tlsv1.2"], # or {":system", ALLOWED_TLS_VERSIONS"} w/ comma seprated values (e.g. "tlsv1.1,tlsv1.2")
+  ssl: false, # can be `true`
+  retries: 1
 
 # Configures Elixir's Logger
 config :logger, :console,

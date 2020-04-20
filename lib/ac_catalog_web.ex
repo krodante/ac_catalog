@@ -63,6 +63,15 @@ defmodule AcCatalogWeb do
     end
   end
 
+  def mailer_view do
+    quote do
+      use Phoenix.View, root: "lib/ac_catalog_web/templates",
+                        namespace: AcCatalogWeb
+
+      use Phoenix.HTML
+    end
+  end
+
   @doc """
   When used, dispatch to the appropriate controller/view/etc.
   """

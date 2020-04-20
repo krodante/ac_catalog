@@ -38,6 +38,30 @@ defmodule AcCatalogWeb.ClothingController do
     |> redirect(to: "/clothing/#{category}")
   end
 
+  def remove(conn, params) do
+    category = params["category"]
+    id = String.to_integer(params["id"])
+    current_user = conn.assigns.current_user
+
+    category_column = String.to_atom("owned_#{category}_ids")
+
+    owned_ids = Map.get(current_user, category_column)
+
+    new_data = Map.new(
+      [
+        {category_column, owned_ids -- [id]}
+      ]
+    )
+
+    changeset = AcCatalog.Accounts.User.changeset(current_user, new_data)
+
+    {:ok, user} = AcCatalog.Repo.update(changeset)
+
+    conn
+    |> put_flash(:info, "Clothing updated successfully.")
+    |> redirect(to: "/clothing/#{category}")
+  end
+
   def index(conn, _params) do
     clothings = Clothings.list_clothings()
     render(conn, "index.html", clothing: clothings)

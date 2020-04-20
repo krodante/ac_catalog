@@ -5,8 +5,11 @@ defmodule AcCatalogWeb.ClothingView do
     case Pow.Plug.current_user(conn) do
       nil -> "You must sign in to use this feature"
       current_user ->
-        IO.inspect current_user
-        Enum.member?(current_user.owned_tops_ids, clothing_id)
+        category_column = String.to_atom("owned_#{table_name}_ids")
+
+        owned_ids = Map.get(current_user, category_column)
+
+        Enum.member?(owned_ids, clothing_id)
     end
   end
 end

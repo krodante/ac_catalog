@@ -34,6 +34,12 @@ defmodule AcCatalogWeb.Router do
     # resources "/furnitures", FurnitureController
 
     get "/furniture/housewares", FurnitureController, :housewares
+    get "/furniture/floors", FurnitureController, :floors
+    get "/furniture/miscellaneous", FurnitureController, :miscellaneous
+    get "/furniture/music", FurnitureController, :music
+    get "/furniture/rugs", FurnitureController, :rugs
+    get "/furniture/wall_mounted", FurnitureController, :wall_mounted
+    get "/furniture/wallpaper", FurnitureController, :wallpaper
   end
 
   scope "/", AcCatalogWeb do

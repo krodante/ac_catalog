@@ -10,8 +10,38 @@ defmodule AcCatalogWeb.FurnitureController do
   end
 
   def housewares(conn, _params) do
-    housewares = Furnitures.list_housewares()
+    housewares = AcCatalog.Housewares.list_housewares()
     render(conn, "index.html", furnitures: housewares, category: "Housewares")
+  end
+
+  def floors(conn, _params) do
+    floors = AcCatalog.Floors.list_floors()
+    render(conn, "index.html", furnitures: floors, category: "Floors")
+  end
+
+  def miscellaneous(conn, _params) do
+    miscellaneous = AcCatalog.MiscFurnitures.list_misc_furnitures()
+    render(conn, "index.html", furnitures: miscellaneous, category: "Miscellaneous")
+  end
+
+  def music(conn, _params) do
+    music = AcCatalog.Musics.list_musics()
+    render(conn, "index.html", furnitures: music, category: "Music")
+  end
+
+  def rugs(conn, _params) do
+    rugs = AcCatalog.Rugs.list_rugs()
+    render(conn, "index.html", furnitures: rugs, category: "Rugs")
+  end
+
+  def wall_mounted(conn, _params) do
+    wall_mounteds = AcCatalog.WallMounteds.list_wall_mounteds()
+    render(conn, "index.html", furnitures: wall_mounteds, category: "Wall-Mounted")
+  end
+
+  def wallpaper(conn, _params) do
+    wallpapers = AcCatalog.Wallpapers.list_wallpapers()
+    render(conn, "index.html", furnitures: wallpapers, category: "Wallpaper")
   end
 
   def new(conn, _params) do

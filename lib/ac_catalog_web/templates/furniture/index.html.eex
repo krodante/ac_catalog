@@ -7,8 +7,6 @@
       <th>Buy price</th>
       <th>Sell price</th>
       <th>Source</th>
-      <th>Variation</th>
-      <th>Size</th>
 
       <th>Owned?</th>
     </tr>
@@ -22,8 +20,6 @@
         <td><%= furniture.buy_price %></td>
         <td><%= furniture.sell_price %></td>
         <td><%= source.name %></td>
-        <td><%= furniture.variation %></td>
-        <td><%= furniture.size %></td>
 
         <td>
           TBD
@@ -32,5 +28,3 @@
     <% end %>
   </tbody>
 </table>
-
-<span><%= link "New Furniture", to: Routes.furniture_path(@conn, :new) %></span>

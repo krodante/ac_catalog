@@ -18,6 +18,7 @@
           <ul>
             <li>
               <%= if Pow.Plug.current_user(@conn) do %>
+                <span>Signed in as <%= @conn.assigns.current_user.email %></span>
                 <span><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %></span>
               <% else %>
                 <span><%= link "Register", to: Routes.pow_registration_path(@conn, :new) %></span>

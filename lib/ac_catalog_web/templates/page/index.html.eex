@@ -1,23 +1,37 @@
-<h2>Furniture</h2>
-<ul>
-  <li><%= link "floors", to: Routes.floors_path(@conn, :floors) %></li>
-  <li><%= link "housewares", to: Routes.housewares_path(@conn, :housewares) %></li>
-  <li><%= link "miscellaneous", to: Routes.miscellaneous_path(@conn, :miscellaneous) %></li>
-  <li><%= link "music", to: Routes.music_path(@conn, :music) %></li>
-  <li><%= link "rugs", to: Routes.rugs_path(@conn, :rugs) %></li>
-  <li><%= link "wall-mounted", to: Routes.wall_mounted_path(@conn, :wall_mounted) %></li>
-  <li><%= link "wallpaper", to: Routes.wallpaper_path(@conn, :wallpaper) %></li>
-</ul>
+<div class="half-column">
+  <h2>Furniture</h2>
+    <span><%= link "floors", to: Routes.floors_path(@conn, :floors) %></span>
+    <br>
+    <span><%= link "housewares", to: Routes.housewares_path(@conn, :housewares) %></span>
+    <br>
+    <span><%= link "miscellaneous", to: Routes.miscellaneous_path(@conn, :miscellaneous) %></span>
+    <br>
+    <span><%= link "music", to: Routes.music_path(@conn, :music) %></span>
+    <br>
+    <span><%= link "rugs", to: Routes.rugs_path(@conn, :rugs) %></span>
+    <br>
+    <span><%= link "wall-mounted", to: Routes.wall_mounted_path(@conn, :wall_mounted) %></span>
+    <br>
+    <span><%= link "wallpaper", to: Routes.wallpaper_path(@conn, :wallpaper) %></span>
+</div>
 
-<h2>Clothing</h2>
-<ul>
-  <li><%= link "accessories", to: Routes.accessories_path(@conn, :accessories) %></li>
-  <li><%= link "bags", to: Routes.bags_path(@conn, :bags) %></li>
-  <li><%= link "bottoms", to: Routes.bottoms_path(@conn, :bottoms) %></li>
-  <li><%= link "dresses", to: Routes.dresses_path(@conn, :dresses) %></li>
-  <li><%= link "headwear", to: Routes.headwear_path(@conn, :headwear) %></li>
-  <li><%= link "shoes", to: Routes.shoes_path(@conn, :shoes) %></li>
-  <li><%= link "socks", to: Routes.socks_path(@conn, :socks) %></li>
-  <li><%= link "tops", to: Routes.tops_path(@conn, :tops) %></li>
-  <li><%= link "umbrellas", to: Routes.umbrellas_path(@conn, :umbrellas) %></li>
-</ul>
+<div class="half-column">
+  <h2>Clothing</h2>
+  <span><%= link "accessories", to: Routes.accessories_path(@conn, :accessories) %></span>
+  <br>
+  <span><%= link "bags", to: Routes.bags_path(@conn, :bags) %></span>
+  <br>
+  <span><%= link "bottoms", to: Routes.bottoms_path(@conn, :bottoms) %></span>
+  <br>
+  <span><%= link "dresses", to: Routes.dresses_path(@conn, :dresses) %></span>
+  <br>
+  <span><%= link "headwear", to: Routes.headwear_path(@conn, :headwear) %></span>
+  <br>
+  <span><%= link "shoes", to: Routes.shoes_path(@conn, :shoes) %></span>
+  <br>
+  <span><%= link "socks", to: Routes.socks_path(@conn, :socks) %></span>
+  <br>
+  <span><%= link "tops", to: Routes.tops_path(@conn, :tops) %></span>
+  <br>
+  <span><%= link "umbrellas", to: Routes.umbrellas_path(@conn, :umbrellas) %></span>
+</div>

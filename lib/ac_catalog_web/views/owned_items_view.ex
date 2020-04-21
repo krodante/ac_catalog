@@ -12,7 +12,7 @@ defmodule AcCatalogWeb.OwnedItemsView do
   end
 
   def owned_item_image(item) do
-    img_tag("https://storage.googleapis.com/acdb/#{source_directory(item.__meta__.source)}/#{item.filename}.png", class: "item")
+    img_tag("https://acnhcdn.com/acdb/#{source_directory(item.__meta__.source)}/#{item.filename}.png", class: "item")
   end
 
   def share_items_link(conn) do

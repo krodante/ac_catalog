@@ -17,7 +17,7 @@
       <% source = AcCatalog.Sources.get_source!(furniture.source_id) %>
 
       <tr>
-        <td><%= img_tag("https://storage.googleapis.com/acdb/#{@category}/#{furniture.filename}.png", class: "item") %></td>
+        <td><%= img_tag("https://acnhcdn.com/acdb/#{@category}/#{furniture.filename}.png", class: "item") %></td>
         <td><%= furniture.name %></td>
         <td><%= furniture.buy_price %></td>
         <td><%= furniture.sell_price %></td>

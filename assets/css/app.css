@@ -16,3 +16,8 @@
   height: 50px;
   width: 50px;
 }
+
+.half-column {
+  width: 48%;
+  float: left;
+}

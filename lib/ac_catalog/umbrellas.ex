@@ -8,6 +8,11 @@ defmodule AcCatalog.Umbrellas do
 
   alias AcCatalog.Umbrellas.Umbrella
 
+  def get_umbrellas(ids) do
+    from(u in Umbrella, where: u.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of umbrellas.
 

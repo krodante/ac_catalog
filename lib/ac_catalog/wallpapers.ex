@@ -8,6 +8,11 @@ defmodule AcCatalog.Wallpapers do
 
   alias AcCatalog.Wallpapers.Wallpaper
 
+  def get_wallpapers(ids) do
+    from(w in Wallpaper, where: w.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of wallpapers.
 

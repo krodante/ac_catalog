@@ -8,6 +8,11 @@ defmodule AcCatalog.Bottoms do
 
   alias AcCatalog.Bottoms.Bottom
 
+  def get_bottoms(ids) do
+    from(b in Bottom, where: b.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of bottoms.
 

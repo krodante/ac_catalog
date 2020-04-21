@@ -35,6 +35,8 @@ defmodule AcCatalogWeb.Router do
 
     get "/", PageController, :index
 
+    get "/owned_items/:shared_user_id", OwnedItemsController, :index, as: :shareable_link
+
     get "/furniture/housewares", FurnitureController, :housewares, as: :housewares
     get "/furniture/floors", FurnitureController, :floors, as: :floors
     get "/furniture/miscellaneous", FurnitureController, :miscellaneous, as: :miscellaneous
@@ -56,6 +58,8 @@ defmodule AcCatalogWeb.Router do
 
   scope "/", AcCatalogWeb do
     pipe_through [:browser, :protected]
+
+    get "/owned_items/", OwnedItemsController, :index
 
     put "/clothing/:table_name/add/:id", ClothingController, :add
     put "/clothing/:table_name/remove/:id", ClothingController, :remove

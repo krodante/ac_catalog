@@ -8,6 +8,11 @@ defmodule AcCatalog.Bags do
 
   alias AcCatalog.Bags.Bag
 
+  def get_bags(ids) do
+    from(b in Bag, where: b.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of bags.
 

@@ -8,6 +8,11 @@ defmodule AcCatalog.MiscFurnitures do
 
   alias AcCatalog.MiscFurnitures.MiscFurniture
 
+  def get_misc_furnitures(ids) do
+    from(mf in MiscFurniture, where: mf.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of misc_furniture.
 

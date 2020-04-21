@@ -25,8 +25,8 @@ defmodule AcCatalogWeb.FurnitureController do
       "housewares" -> "housewares"
       "musics" -> "music"
       "rugs" -> "rugs"
-      "wall_mounteds" -> "wall_mounted"
-      "wallpapers" -> "wallpaper"
+      "wall_mounteds" -> "wall-mounted"
+      "wallpapers" -> "wallpapers"
     end
   end
 
@@ -77,7 +77,7 @@ defmodule AcCatalogWeb.FurnitureController do
 
     conn
     |> put_flash(:info, "Furniture updated successfully.")
-    |> redirect(to: "/furniture/#{category}")
+    |> redirect(to: NavigationHistory.last_path(conn))
   end
 
   def index(conn, _params) do
@@ -124,7 +124,7 @@ defmodule AcCatalogWeb.FurnitureController do
   def wallpaper(conn, _params) do
     wallpapers = AcCatalog.Wallpapers.list_wallpapers()
     table_name = "wallpapers"
-    render(conn, "index.html", furnitures: wallpapers, category: "wallpaper", table_name: table_name)
+    render(conn, "index.html", furnitures: wallpapers, category: "wallpapers", table_name: table_name)
   end
 
   def new(conn, _params) do

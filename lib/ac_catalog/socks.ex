@@ -8,6 +8,11 @@ defmodule AcCatalog.Socks do
 
   alias AcCatalog.Socks.Sock
 
+  def get_socks(ids) do
+    from(s in Sock, where: s.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of socks.
 

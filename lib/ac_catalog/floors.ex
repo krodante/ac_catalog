@@ -8,6 +8,11 @@ defmodule AcCatalog.Floors do
 
   alias AcCatalog.Floors.Floor
 
+  def get_floors(ids) do
+    from(f in Floor, where: f.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of floors.
 

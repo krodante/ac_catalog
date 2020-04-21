@@ -8,6 +8,11 @@ defmodule AcCatalog.Rugs do
 
   alias AcCatalog.Rugs.Rug
 
+  def get_rugs(ids) do
+    from(r in Rug, where: r.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of rugs.
 

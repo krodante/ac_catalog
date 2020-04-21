@@ -8,6 +8,11 @@ defmodule AcCatalog.Tops do
 
   alias AcCatalog.Tops.Top
 
+  def get_tops(ids) do
+    from(t in Top, where: t.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of tops.
 

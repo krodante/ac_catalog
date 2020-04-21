@@ -8,6 +8,31 @@ defmodule AcCatalog.Clothings do
 
   alias AcCatalog.Clothings.Clothing
 
+  @clothing_modules [
+    "Accessories",
+    "Bags",
+    "Bottoms",
+    "Dresses",
+    "Headwears",
+    "Shoes",
+    "Socks",
+    "Tops",
+    "Umbrellas"
+  ]
+
+  def list_owned_clothing(user) do
+    @clothing_modules
+    |> Enum.flat_map(fn module ->
+      table_name = Macro.underscore(module)
+      function = "get_#{table_name}"
+      column_name = String.to_existing_atom("owned_#{table_name}_ids")
+
+      owned_ids = Map.get(user, column_name)
+
+      apply(String.to_existing_atom("Elixir.AcCatalog.#{module}"), String.to_existing_atom(function), [owned_ids])
+    end)
+  end
+
   @doc """
   Returns the list of clothings.
 

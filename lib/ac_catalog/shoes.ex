@@ -8,6 +8,11 @@ defmodule AcCatalog.Shoes do
 
   alias AcCatalog.Shoes.Shoe
 
+  def get_shoes(ids) do
+    from(s in Shoe, where: s.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of shoes.
 

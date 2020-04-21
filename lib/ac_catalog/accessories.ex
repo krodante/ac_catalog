@@ -8,6 +8,11 @@ defmodule AcCatalog.Accessories do
 
   alias AcCatalog.Accessories.Accessory
 
+  def get_accessories(ids) do
+    from(a in Accessory, where: a.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of accessories.
 

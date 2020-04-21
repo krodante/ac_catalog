@@ -8,6 +8,11 @@ defmodule AcCatalog.Headwears do
 
   alias AcCatalog.Headwears.Headwear
 
+  def get_headwears(ids) do
+    from(h in Headwear, where: h.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of headwears.
 

@@ -8,6 +8,11 @@ defmodule AcCatalog.Musics do
 
   alias AcCatalog.Musics.Music
 
+  def get_musics(ids) do
+    from(m in Music, where: m.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of musics.
 

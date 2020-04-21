@@ -8,6 +8,11 @@ defmodule AcCatalog.Housewares do
 
   alias AcCatalog.Housewares.Houseware
 
+  def get_housewares(ids) do
+    from(h in Houseware, where: h.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of housewares.
 

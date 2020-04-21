@@ -8,6 +8,11 @@ defmodule AcCatalog.WallMounteds do
 
   alias AcCatalog.WallMounteds.WallMounted
 
+  def get_wall_mounteds(ids) do
+    from(wm in WallMounted, where: wm.id in ^ids)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of wall_mounteds.
 

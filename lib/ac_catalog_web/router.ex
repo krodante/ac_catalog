@@ -57,11 +57,11 @@ defmodule AcCatalogWeb.Router do
   scope "/", AcCatalogWeb do
     pipe_through [:browser, :protected]
 
-    put "/clothing/:category/add/:id", ClothingController, :add
-    put "/clothing/:category/remove/:id", ClothingController, :remove
+    put "/clothing/:table_name/add/:id", ClothingController, :add
+    put "/clothing/:table_name/remove/:id", ClothingController, :remove
 
-    put "/furniture/:category/add/:id", FurnitureController, :add
-    put "/furniture/:category/remove/:id", FurnitureController, :remove
+    put "/furniture/:table_name/add/:id", FurnitureController, :add
+    put "/furniture/:table_name/remove/:id", FurnitureController, :remove
   end
 
   # Other scopes may use custom stacks.

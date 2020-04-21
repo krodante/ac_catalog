@@ -18,18 +18,31 @@ defmodule AcCatalogWeb.FurnitureController do
     end
   end
 
+  def category_for(table_name) do
+    case table_name do
+      "misc_furnitures" -> "miscellaneous"
+      "floors" -> "floors"
+      "housewares" -> "housewares"
+      "musics" -> "music"
+      "rugs" -> "rugs"
+      "wall_mounteds" -> "wall_mounted"
+      "wallpapers" -> "wallpaper"
+    end
+  end
+
   def add(conn, params) do
-    category = params["category"]
+    table_name = params["table_name"]
+    category = category_for(table_name)
     id = params["id"]
     current_user = conn.assigns.current_user
 
-    category_column = String.to_atom("owned_#{category}_ids")
+    table_name_column = String.to_atom("owned_#{table_name}_ids")
 
-    owned_ids = Map.get(current_user, category_column)
+    owned_ids = Map.get(current_user, table_name_column)
 
     new_data = Map.new(
       [
-        {category_column, owned_ids ++ [id]}
+        {table_name_column, owned_ids ++ [id]}
       ]
     )
 
@@ -43,17 +56,18 @@ defmodule AcCatalogWeb.FurnitureController do
   end
 
   def remove(conn, params) do
-    category = params["category"]
+    table_name = params["table_name"]
+    category = category_for(table_name)
     id = String.to_integer(params["id"])
     current_user = conn.assigns.current_user
 
-    category_column = String.to_atom("owned_#{category}_ids")
+    table_name_column = String.to_atom("owned_#{table_name}_ids")
 
-    owned_ids = Map.get(current_user, category_column)
+    owned_ids = Map.get(current_user, table_name_column)
 
     new_data = Map.new(
       [
-        {category_column, owned_ids -- [id]}
+        {table_name_column, owned_ids -- [id]}
       ]
     )
 

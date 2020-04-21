@@ -11,7 +11,7 @@ defmodule AcCatalogWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :put_root_layout, {AcCatalogWeb.LayoutView, :root}
-    plug NavigationHistory.Tracker, excluded_paths: [~r(/session.*), ~r(/reset-password.*/), ~r(/registration.*/)]
+    plug NavigationHistory.Tracker, excluded_paths: [~r(/session.*), ~r(/reset-password.*/), ~r(/registration.*/), ~r(/confirm-email.*/)]
   end
 
   pipeline :protected do

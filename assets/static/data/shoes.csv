@@ -1,0 +1,453 @@
+name,variation,buy_price,sell_price,source,style,filename
+antique boots,Brown,2640,660,Able Sisters,Simple,ShoesKneeAntique0
+antique boots,Black,2640,660,Able Sisters,Simple,ShoesKneeAntique1
+antique boots,Greige,2640,660,Able Sisters,Simple,ShoesKneeAntique2
+armor shoes,Gray,NFS,3000,Crafting,Cool,ShoesKneeKnightIron
+babouches,Blue,560,140,Kicks,Cute,ShoesSandalBaboush0
+babouches,Orange,560,140,Kicks,Cute,ShoesSandalBaboush1
+babouches,Pink,560,140,Kicks,Cute,ShoesSandalBaboush2
+babouches,Yellow,560,140,Kicks,Cute,ShoesSandalBaboush3
+babouches,Gray,560,140,Kicks,Cute,ShoesSandalBaboush4
+babouches,Purple,560,140,Kicks,Cute,ShoesSandalBaboush5
+babouches,Mint,560,140,Kicks,Cute,ShoesSandalBaboush6
+babouches,Red,560,140,Kicks,Cute,ShoesSandalBaboush7
+ballet slippers,Pink,2200,550,Kicks,Elegant,ShoesLowcutBallet0
+ballet slippers,Mint,2200,550,Kicks,Elegant,ShoesLowcutBallet1
+ballet slippers,Blue,2200,550,Kicks,Elegant,ShoesLowcutBallet2
+ballet slippers,Purple,2200,550,Kicks,Elegant,ShoesLowcutBallet3
+ballet slippers,Black,2200,550,Kicks,Elegant,ShoesLowcutBallet4
+ballet slippers,White,2200,550,Kicks,Elegant,ShoesLowcutBallet5
+ballet slippers,Yellow,2200,550,Kicks,Elegant,ShoesLowcutBallet6
+ballet slippers,Red,2200,550,Kicks,Elegant,ShoesLowcutBallet7
+basketball shoes,Red,1500,375,Able Sisters,Active,ShoesHighcutBasket0
+basketball shoes,Green,1500,375,Able Sisters,Active,ShoesHighcutBasket1
+basketball shoes,Beige,1500,375,Able Sisters,Active,ShoesHighcutBasket2
+basketball shoes,Orange,1500,375,Able Sisters,Active,ShoesHighcutBasket3
+basketball shoes,Blue,1500,375,Able Sisters,Active,ShoesHighcutBasket4
+basketball shoes,Purple,1500,375,Able Sisters,Active,ShoesHighcutBasket5
+basketball shoes,Light blue,1500,375,Able Sisters,Active,ShoesHighcutBasket6
+basketball shoes,Pink,1500,375,Able Sisters,Active,ShoesHighcutBasket7
+beaded sandals,Orange,1800,450,Able Sisters,Gorgeous,ShoesSandalBeads0
+beaded sandals,Purple,1800,450,Able Sisters,Gorgeous,ShoesSandalBeads1
+beaded sandals,Yellow,1800,450,Able Sisters,Gorgeous,ShoesSandalBeads2
+beaded sandals,Red,1800,450,Able Sisters,Gorgeous,ShoesSandalBeads3
+beaded sandals,Green,1800,450,Able Sisters,Gorgeous,ShoesSandalBeads4
+beaded sandals,Beige,1800,450,Able Sisters,Gorgeous,ShoesSandalBeads5
+boots,Green,560,140,Able Sisters,Simple,ShoesKneeRubberboots0
+boots,Black,560,140,Able Sisters,Simple,ShoesKneeRubberboots1
+boots,Blue,560,140,Able Sisters,Simple,ShoesKneeRubberboots2
+boots,Red,560,140,Able Sisters,Simple,ShoesKneeRubberboots3
+boots,Olive,560,140,Able Sisters,Simple,ShoesKneeRubberboots4
+business shoes,Black,1300,325,Able Sisters,Simple,ShoesLowcutBusiness0
+business shoes,Brown,1300,325,Able Sisters,Simple,ShoesLowcutBusiness1
+cleats,Blue,1200,300,Kicks,Active,ShoesLowcutSpike0
+cleats,Light blue,1200,300,Kicks,Active,ShoesLowcutSpike1
+cleats,Red,1200,300,Kicks,Active,ShoesLowcutSpike2
+cleats,Yellow,1200,300,Kicks,Active,ShoesLowcutSpike3
+cleats,Black,1200,300,Kicks,Active,ShoesLowcutSpike4
+cleats,Orange,1200,300,Kicks,Active,ShoesLowcutSpike5
+cleats,Green,1200,300,Kicks,Active,ShoesLowcutSpike6
+cleats,Purple,1200,300,Kicks,Active,ShoesLowcutSpike7
+comfy sandals,Brown,1040,260,Able Sisters,Simple,ShoesSandalComfort0
+comfy sandals,White,1040,260,Able Sisters,Simple,ShoesSandalComfort1
+comfy sandals,Green,1040,260,Able Sisters,Simple,ShoesSandalComfort2
+comfy sandals,Blue,1040,260,Able Sisters,Simple,ShoesSandalComfort3
+comfy sandals,Red,1040,260,Able Sisters,Simple,ShoesSandalComfort4
+comfy sandals,Orange,1040,260,Able Sisters,Simple,ShoesSandalComfort5
+comfy sandals,Yellow,1040,260,Able Sisters,Simple,ShoesSandalComfort6
+comfy sandals,Purple,1040,260,Able Sisters,Simple,ShoesSandalComfort7
+cowboy boots,Brown,2380,595,Able Sisters,Elegant,ShoesKneeWestern0
+cowboy boots,Black,2380,595,Able Sisters,Elegant,ShoesKneeWestern1
+cowboy boots,Ivory,2380,595,Able Sisters,Elegant,ShoesKneeWestern2
+cowboy boots,Pink,2380,595,Able Sisters,Elegant,ShoesKneeWestern3
+cowboy boots,Blue,2380,595,Able Sisters,Elegant,ShoesKneeWestern4
+cross-belt sandals,Green,1040,260,Able Sisters,Elegant,ShoesSandalCrossbelt0
+cross-belt sandals,Pink,1040,260,Able Sisters,Elegant,ShoesSandalCrossbelt1
+cross-belt sandals,Gray,1040,260,Able Sisters,Elegant,ShoesSandalCrossbelt2
+cross-belt sandals,Brown,1040,260,Able Sisters,Elegant,ShoesSandalCrossbelt3
+cross-belt sandals,Black,1040,260,Able Sisters,Elegant,ShoesSandalCrossbelt4
+cross-belt sandals,Purple,1040,260,Able Sisters,Elegant,ShoesSandalCrossbelt5
+cute sneakers,Light blue,1260,315,Able Sisters,Cute,ShoesHighcutCute0
+cute sneakers,Green,1260,315,Able Sisters,Cute,ShoesHighcutCute1
+cute sneakers,Pink,1260,315,Able Sisters,Cute,ShoesHighcutCute2
+cute sneakers,Yellow,1260,315,Able Sisters,Cute,ShoesHighcutCute3
+cute sneakers,Purple,1260,315,Able Sisters,Cute,ShoesHighcutCute4
+cute sneakers,Blue,1260,315,Able Sisters,Cute,ShoesHighcutCute5
+DAL slippers,Blue,4040,1010,Dodo Airlines,Simple,AccessoryGlassSlippers0
+earth-egg shoes,None,NFS,800,Crafting,Active,ShoesLowcutEggground0
+embroidered shoes,Red,2100,525,Kicks,Elegant,ShoesLowcutEmbroidery0
+embroidered shoes,White,2100,525,Kicks,Elegant,ShoesLowcutEmbroidery1
+embroidered shoes,Black,2100,525,Kicks,Elegant,ShoesLowcutEmbroidery2
+embroidered shoes,Blue,2100,525,Kicks,Elegant,ShoesLowcutEmbroidery3
+faux-fur ankle booties,Olive,1450,362,Able Sisters,Elegant,ShoesHighcutFurboots0
+faux-fur ankle booties,Beige,1450,362,Able Sisters,Elegant,ShoesHighcutFurboots1
+faux-fur ankle booties,Ruby red,1450,362,Able Sisters,Elegant,ShoesHighcutFurboots2
+faux-fur ankle booties,Navy blue,1450,362,Able Sisters,Elegant,ShoesHighcutFurboots3
+faux-shearling boots,Beige,1600,400,Able Sisters,Cute,ShoesHighcutMouton0
+faux-shearling boots,Pink,1600,400,Able Sisters,Cute,ShoesHighcutMouton1
+faux-shearling boots,Green,1600,400,Able Sisters,Cute,ShoesHighcutMouton2
+faux-shearling boots,Black,1600,400,Able Sisters,Cute,ShoesHighcutMouton3
+faux-shearling boots,Gray,1600,400,Able Sisters,Cute,ShoesHighcutMouton4
+faux-suede sneakers,Green,1080,270,Able Sisters,Simple,ShoesLowcutSuede0
+faux-suede sneakers,Navy blue,1080,270,Able Sisters,Simple,ShoesLowcutSuede1
+faux-suede sneakers,Beige,1080,270,Able Sisters,Simple,ShoesLowcutSuede2
+faux-suede sneakers,Orange,1080,270,Able Sisters,Simple,ShoesLowcutSuede3
+faux-suede sneakers,Pink,1080,270,Able Sisters,Simple,ShoesLowcutSuede4
+faux-suede sneakers,Light blue,1080,270,Able Sisters,Simple,ShoesLowcutSuede5
+faux-suede sneakers,Purple,1080,270,Able Sisters,Simple,ShoesLowcutSuede6
+faux-suede sneakers,Berry red,1080,270,Able Sisters,Simple,ShoesLowcutSuede7
+flip-flops,Blue,350,87,Able Sisters,Active,ShoesSandalBeachborder0
+flip-flops,Green,350,87,Able Sisters,Active,ShoesSandalBeachborder1
+flip-flops,Yellow,350,87,Able Sisters,Active,ShoesSandalBeachborder2
+flip-flops,White,350,87,Able Sisters,Active,ShoesSandalBeachborder3
+flip-flops,Orange,350,87,Able Sisters,Active,ShoesSandalBeachborder4
+flip-flops,Light blue,350,87,Able Sisters,Active,ShoesSandalBeachborder5
+flip-flops,Pink,350,87,Able Sisters,Active,ShoesSandalBeachborder6
+flip-flops,Red,350,87,Able Sisters,Active,ShoesSandalBeachborder7
+flower sandals,Yellow,1200,300,Able Sisters,Cute,ShoesSandalFlower0
+flower sandals,Pink,1200,300,Able Sisters,Cute,ShoesSandalFlower1
+flower sandals,Green,1200,300,Able Sisters,Cute,ShoesSandalFlower2
+flower sandals,Purple,1200,300,Able Sisters,Cute,ShoesSandalFlower3
+flower sandals,Blue,1200,300,Able Sisters,Cute,ShoesSandalFlower4
+flower sandals,Black,1200,300,Able Sisters,Cute,ShoesSandalFlower5
+flower sandals,White,1200,300,Able Sisters,Cute,ShoesSandalFlower6
+ghillie brogues,Brown,2340,585,Kicks,Gorgeous,ShoesLowcutBrogues0
+ghillie brogues,Black,2340,585,Kicks,Gorgeous,ShoesLowcutBrogues1
+ghillie brogues,White,2340,585,Kicks,Gorgeous,ShoesLowcutBrogues2
+gladiator sandals,Brown,1800,450,Able Sisters,Elegant,ShoesSandalGladiator0
+gladiator sandals,Black,1800,450,Able Sisters,Elegant,ShoesSandalGladiator1
+gladiator sandals,Red,1800,450,Able Sisters,Elegant,ShoesSandalGladiator2
+gold-armor shoes,Gold,NFS,40000,Crafting,Gorgeous,ShoesKneeKnightGold
+hi-tech sneakers,Orange,1260,315,Able Sisters,Cool,ShoesHighcutHightech0
+hi-tech sneakers,Pink,1260,315,Able Sisters,Cool,ShoesHighcutHightech1
+hi-tech sneakers,Green,1260,315,Able Sisters,Cool,ShoesHighcutHightech2
+hi-tech sneakers,Light blue,1260,315,Able Sisters,Cool,ShoesHighcutHightech3
+hi-tech sneakers,Blue,1260,315,Able Sisters,Cool,ShoesHighcutHightech4
+high-tops,Gray,1080,270,Able Sisters,Simple,ShoesHighcutSneaker0
+high-tops,Brown,1080,270,Able Sisters,Simple,ShoesHighcutSneaker1
+high-tops,Green,1080,270,Able Sisters,Simple,ShoesHighcutSneaker2
+high-tops,Blue,1080,270,Able Sisters,Simple,ShoesHighcutSneaker3
+high-tops,Purple,1080,270,Able Sisters,Simple,ShoesHighcutSneaker4
+high-tops,Red,1080,270,Able Sisters,Simple,ShoesHighcutSneaker5
+high-tops,Yellow,1080,270,Able Sisters,Simple,ShoesHighcutSneaker6
+high-tops,White,1080,270,Able Sisters,Simple,ShoesHighcutSneaker7
+house slippers,Gray,490,122,Able Sisters,Simple,ShoesSandalRoomborder0
+house slippers,Navy blue,490,122,Able Sisters,Simple,ShoesSandalRoomborder1
+house slippers,Pink,490,122,Able Sisters,Simple,ShoesSandalRoomborder2
+house slippers,Yellow,490,122,Able Sisters,Simple,ShoesSandalRoomborder3
+house slippers,Green,490,122,Able Sisters,Simple,ShoesSandalRoomborder4
+house slippers,Blue,490,122,Able Sisters,Simple,ShoesSandalRoomborder5
+house slippers,Red,490,122,Able Sisters,Simple,ShoesSandalRoomborder6
+house slippers,Beige,490,122,Able Sisters,Simple,ShoesSandalRoomborder7
+jester's shoes,Purple,1900,475,Kicks,Active,ShoesKneeClown0
+jester's shoes,Black,1900,475,Kicks,Active,ShoesKneeClown1
+jester's shoes,Red,1900,475,Kicks,Active,ShoesKneeClown2
+jester's shoes,Green,1900,475,Kicks,Active,ShoesKneeClown3
+kiddie sneakers,Red,700,175,Kicks,Active,ShoesHighcutSports0
+kiddie sneakers,Blue,700,175,Kicks,Active,ShoesHighcutSports1
+kiddie sneakers,Green,700,175,Kicks,Active,ShoesHighcutSports2
+kiddie sneakers,Purple,700,175,Kicks,Active,ShoesHighcutSports3
+kiddie sneakers,Silver,700,175,Kicks,Active,ShoesHighcutSports4
+kiddie sneakers,Black,700,175,Kicks,Active,ShoesHighcutSports5
+kimono sandals,Black,1600,400,Kicks,Simple,ShoesSandalGeta0
+kimono sandals,Red,1600,400,Kicks,Simple,ShoesSandalGeta1
+kimono sandals,Pink,1600,400,Kicks,Simple,ShoesSandalGeta2
+kimono sandals,Dark blue,1600,400,Kicks,Simple,ShoesSandalGeta3
+kimono sandals,Gray,1600,400,Kicks,Simple,ShoesSandalGeta4
+kimono sandals,Purple,1600,400,Kicks,Simple,ShoesSandalGeta5
+kimono sandals,Yellow,1600,400,Kicks,Simple,ShoesSandalGeta6
+kimono sandals,Green,1600,400,Kicks,Simple,ShoesSandalGeta7
+kung-fu shoes,Black,1260,315,Kicks,Active,ShoesLowcutKungfu0
+Labelle pumps,Twilight,3500,875,Labelle,Elegant,ShoesLowcutKateheel0
+Labelle pumps,Midnight,3500,875,Labelle,Elegant,ShoesLowcutKateheel1
+Labelle pumps,Passion,3500,875,Labelle,Elegant,ShoesLowcutKateheel2
+Labelle pumps,Ocean,3500,875,Labelle,Elegant,ShoesLowcutKateheel3
+Labelle pumps,Sunset,3500,875,Labelle,Elegant,ShoesLowcutKateheel4
+Labelle pumps,Love,3500,875,Labelle,Elegant,ShoesLowcutKateheel5
+Labelle sneakers,Twilight,3300,825,Labelle,Cool,ShoesHighcutKatesneaker0
+Labelle sneakers,Midnight,3300,825,Labelle,Cool,ShoesHighcutKatesneaker1
+Labelle sneakers,Passion,3300,825,Labelle,Cool,ShoesHighcutKatesneaker2
+Labelle sneakers,Ocean,3300,825,Labelle,Cool,ShoesHighcutKatesneaker3
+Labelle sneakers,Sunset,3300,825,Labelle,Cool,ShoesHighcutKatesneaker4
+Labelle sneakers,Love,3300,825,Labelle,Cool,ShoesHighcutKatesneaker5
+lace-up boots,Black,1920,480,Able Sisters,Cool,ShoesKneeLaceup0
+lace-up boots,White,1920,480,Able Sisters,Cool,ShoesKneeLaceup1
+lace-up boots,Brown,1920,480,Able Sisters,Cool,ShoesKneeLaceup2
+lace-up boots,Red,1920,480,Able Sisters,Cool,ShoesKneeLaceup3
+leaf-egg shoes,None,NFS,800,Crafting,Active,ShoesLowcutEggleaf0
+leopard pumps,Beige,1560,390,Able Sisters,Elegant,ShoesLowcutLeopard0
+leopard pumps,Gray,1560,390,Able Sisters,Elegant,ShoesLowcutLeopard1
+leopard pumps,Blue,1560,390,Able Sisters,Elegant,ShoesLowcutLeopard2
+leopard pumps,Green,1560,390,Able Sisters,Elegant,ShoesLowcutLeopard3
+leopard pumps,Purple,1560,390,Able Sisters,Elegant,ShoesLowcutLeopard4
+leopard pumps,Pink,1560,390,Able Sisters,Elegant,ShoesLowcutLeopard5
+loafers,Brown,1300,325,Able Sisters,Simple,ShoesLowcutLoafers0
+loafers,Black,1300,325,Able Sisters,Simple,ShoesLowcutLoafers1
+loafers,White,1300,325,Able Sisters,Simple,ShoesLowcutLoafers2
+loafers,Pink,1300,325,Able Sisters,Simple,ShoesLowcutLoafers3
+loafers,Blue,1300,325,Able Sisters,Simple,ShoesLowcutLoafers4
+loafers,Yellow,1300,325,Able Sisters,Simple,ShoesLowcutLoafers5
+loafers,Red,1300,325,Able Sisters,Simple,ShoesLowcutLoafers6
+mage's booties,Black,1550,387,Kicks,Cool,ShoesKneeWitch0
+mage's booties,Blue,1550,387,Kicks,Cool,ShoesKneeWitch1
+mage's booties,White,1550,387,Kicks,Cool,ShoesKneeWitch2
+mage's booties,Red,1550,387,Kicks,Cool,ShoesKneeWitch3
+mary janes,Black,1800,450,Able Sisters,Cute,ShoesLowcutStrap0
+mary janes,Red,1800,450,Able Sisters,Cute,ShoesLowcutStrap1
+mary janes,White,1800,450,Able Sisters,Cute,ShoesLowcutStrap2
+mary janes,Light blue,1800,450,Able Sisters,Cute,ShoesLowcutStrap3
+mary janes,Yellow,1800,450,Able Sisters,Cute,ShoesLowcutStrap4
+mary janes,Blue,1800,450,Able Sisters,Cute,ShoesLowcutStrap5
+mary janes,Green,1800,450,Able Sisters,Cute,ShoesLowcutStrap6
+mary janes,Pink,1800,450,Able Sisters,Cute,ShoesLowcutStrap7
+moccasin boots,Camel,1120,280,Able Sisters,Simple,ShoesHighcutMoccasin0
+moccasin boots,Olive,1120,280,Able Sisters,Simple,ShoesHighcutMoccasin1
+moccasin boots,Beige,1120,280,Able Sisters,Simple,ShoesHighcutMoccasin2
+moccasin boots,Pink,1120,280,Able Sisters,Simple,ShoesHighcutMoccasin3
+moccasin boots,Black,1120,280,Able Sisters,Simple,ShoesHighcutMoccasin4
+moccasin boots,Blue,1120,280,Able Sisters,Simple,ShoesHighcutMoccasin5
+moccasin boots,Orange,1120,280,Able Sisters,Simple,ShoesHighcutMoccasin6
+moccasins,Camel,1080,270,Able Sisters,Elegant,ShoesLowcutMoccasin0
+moccasins,Red,1080,270,Able Sisters,Elegant,ShoesLowcutMoccasin1
+moccasins,Light blue,1080,270,Able Sisters,Elegant,ShoesLowcutMoccasin2
+moccasins,White,1080,270,Able Sisters,Elegant,ShoesLowcutMoccasin3
+moccasins,Pink,1080,270,Able Sisters,Elegant,ShoesLowcutMoccasin4
+moccasins,Gray,1080,270,Able Sisters,Elegant,ShoesLowcutMoccasin5
+moccasins,Black,1080,270,Able Sisters,Elegant,ShoesLowcutMoccasin6
+Nook Inc. slippers,White,NFS,2000,Nook Miles Shop,Simple,ShoesSandalRco
+outdoor sandals,Green,630,157,Able Sisters,Active,ShoesSandalOutdoor0
+outdoor sandals,Red,630,157,Able Sisters,Active,ShoesSandalOutdoor1
+outdoor sandals,Blue,630,157,Able Sisters,Active,ShoesSandalOutdoor2
+outdoor sandals,Purple,630,157,Able Sisters,Active,ShoesSandalOutdoor3
+outdoor sandals,Yellow,630,157,Able Sisters,Active,ShoesSandalOutdoor4
+outdoor sandals,Orange,630,157,Able Sisters,Active,ShoesSandalOutdoor5
+outdoor sandals,White,630,157,Able Sisters,Active,ShoesSandalOutdoor6
+outdoor sandals,Black,630,157,Able Sisters,Active,ShoesSandalOutdoor7
+paw slippers,Pink,1260,315,Kicks,Cute,ShoesLowcutAnimal0
+paw slippers,Brown,1260,315,Kicks,Cute,ShoesLowcutAnimal1
+paw slippers,White,1260,315,Kicks,Cute,ShoesLowcutAnimal2
+paw slippers,Blue,1260,315,Kicks,Cute,ShoesLowcutAnimal3
+paw slippers,Black,1260,315,Kicks,Cute,ShoesLowcutAnimal4
+pleather ankle booties,Brown,1280,320,Able Sisters,Elegant,ShoesHighcutShortboots0
+pleather ankle booties,Black,1280,320,Able Sisters,Elegant,ShoesHighcutShortboots1
+pleather ankle booties,Green,1280,320,Able Sisters,Elegant,ShoesHighcutShortboots2
+pleather ankle booties,Mustard,1280,320,Able Sisters,Elegant,ShoesHighcutShortboots3
+pleather sneakers,White,700,175,Able Sisters,Simple,ShoesLowcutLeathersneker0
+pleather sneakers,Black,700,175,Able Sisters,Simple,ShoesLowcutLeathersneker1
+pleather sneakers,Red,700,175,Able Sisters,Simple,ShoesLowcutLeathersneker2
+pleather sneakers,Green,700,175,Able Sisters,Simple,ShoesLowcutLeathersneker3
+pleather sneakers,Blue,700,175,Able Sisters,Simple,ShoesLowcutLeathersneker4
+pleather sneakers,Yellow,700,175,Able Sisters,Simple,ShoesLowcutLeathersneker5
+pleather sneakers,Light blue,700,175,Able Sisters,Simple,ShoesLowcutLeathersneker6
+pleather sneakers,Orange,700,175,Able Sisters,Simple,ShoesLowcutLeathersneker7
+pom-pom boots,Pink,1600,400,Able Sisters,Cute,ShoesHighcutBobbles0
+pom-pom boots,Red,1600,400,Able Sisters,Cute,ShoesHighcutBobbles1
+pom-pom boots,Yellow,1600,400,Able Sisters,Cute,ShoesHighcutBobbles2
+pom-pom boots,Purple,1600,400,Able Sisters,Cute,ShoesHighcutBobbles3
+pom-pom boots,Green,1600,400,Able Sisters,Cute,ShoesHighcutBobbles4
+pom-pom boots,Blue,1600,400,Able Sisters,Cute,ShoesHighcutBobbles5
+pom-pom boots,Black,1600,400,Able Sisters,Cute,ShoesHighcutBobbles6
+power boots,Red,3150,787,Kicks,Active,ShoesKneePowered0
+power boots,Blue,3150,787,Kicks,Active,ShoesKneePowered1
+power boots,Green,3150,787,Kicks,Active,ShoesKneePowered2
+power boots,Black,3150,787,Kicks,Active,ShoesKneePowered3
+rain boots,Yellow,490,122,Able Sisters,Simple,ShoesKneeRainboots0
+rain boots,Green,490,122,Able Sisters,Simple,ShoesKneeRainboots1
+rain boots,Blue,490,122,Able Sisters,Simple,ShoesKneeRainboots2
+rain boots,Purple,490,122,Able Sisters,Simple,ShoesKneeRainboots3
+rain boots,Pink,490,122,Able Sisters,Simple,ShoesKneeRainboots4
+rain boots,Red,490,122,Able Sisters,Simple,ShoesKneeRainboots5
+rain boots,Beige,490,122,Able Sisters,Simple,ShoesKneeRainboots6
+rain boots,Black,490,122,Able Sisters,Simple,ShoesKneeRainboots7
+recycled boots,Brown,NFS,40,Crafting,Simple,ShoesKneeRecyclingboots0
+restroom slippers,Navy blue,350,87,Kicks,Simple,ShoesLowcutToilet0
+restroom slippers,Red,350,87,Kicks,Simple,ShoesLowcutToilet1
+restroom slippers,Green,350,87,Kicks,Simple,ShoesLowcutToilet2
+restroom slippers,Light blue,350,87,Kicks,Simple,ShoesLowcutToilet3
+restroom slippers,Pink,350,87,Kicks,Simple,ShoesLowcutToilet4
+ribbon sandals,Blue,1300,325,Able Sisters,Cute,ShoesSandalRibbon0
+ribbon sandals,White,1300,325,Able Sisters,Cute,ShoesSandalRibbon1
+ribbon sandals,Pink,1300,325,Able Sisters,Cute,ShoesSandalRibbon2
+ribbon sandals,Yellow,1300,325,Able Sisters,Cute,ShoesSandalRibbon3
+ribbon sandals,Green,1300,325,Able Sisters,Cute,ShoesSandalRibbon4
+ribbon sandals,Berry red,1300,325,Able Sisters,Cute,ShoesSandalRibbon5
+ribbon sandals,Black,1300,325,Able Sisters,Cute,ShoesSandalRibbon6
+ribbon sandals,Beige,1300,325,Able Sisters,Cute,ShoesSandalRibbon7
+rubber-toe high tops,Blue,1260,315,Able Sisters,Simple,ShoesHighcutRubbertoe0
+rubber-toe high tops,Olive,1260,315,Able Sisters,Simple,ShoesHighcutRubbertoe1
+rubber-toe high tops,Beige,1260,315,Able Sisters,Simple,ShoesHighcutRubbertoe2
+rubber-toe high tops,Pink,1260,315,Able Sisters,Simple,ShoesHighcutRubbertoe3
+rubber-toe high tops,Berry red,1260,315,Able Sisters,Simple,ShoesHighcutRubbertoe4
+rubber-toe high tops,Coral,1260,315,Able Sisters,Simple,ShoesHighcutRubbertoe5
+rubber-toe high tops,Ivory,1260,315,Able Sisters,Simple,ShoesHighcutRubbertoe6
+rubber-toe high tops,Black,1260,315,Able Sisters,Simple,ShoesHighcutRubbertoe7
+rubber-toe sneakers,Purple,1080,270,Able Sisters,Simple,ShoesLowcutRubbertoe0
+rubber-toe sneakers,Green,1080,270,Able Sisters,Simple,ShoesLowcutRubbertoe1
+rubber-toe sneakers,Yellow,1080,270,Able Sisters,Simple,ShoesLowcutRubbertoe2
+rubber-toe sneakers,Light blue,1080,270,Able Sisters,Simple,ShoesLowcutRubbertoe3
+rubber-toe sneakers,Red,1080,270,Able Sisters,Simple,ShoesLowcutRubbertoe4
+rubber-toe sneakers,Pink,1080,270,Able Sisters,Simple,ShoesLowcutRubbertoe5
+rubber-toe sneakers,Blue,1080,270,Able Sisters,Simple,ShoesLowcutRubbertoe6
+rubber-toe sneakers,Black,1080,270,Able Sisters,Simple,ShoesLowcutRubbertoe7
+samurai greaves,Red,4300,1075,Kicks,Cool,ShoesKneeLegguard0
+samurai greaves,Black,4300,1075,Kicks,Cool,ShoesKneeLegguard1
+samurai greaves,Blue,4300,1075,Kicks,Cool,ShoesKneeLegguard2
+samurai greaves,White,4300,1075,Kicks,Cool,ShoesKneeLegguard3
+samurai greaves,Golden yellow,4300,1075,Kicks,Cool,ShoesKneeLegguard4
+shiny bow platform shoes,Pink,2400,600,Kicks,Cute,ShoesLowcutLolita0
+shiny bow platform shoes,Black,2400,600,Kicks,Cute,ShoesLowcutLolita1
+shiny bow platform shoes,Red,2400,600,Kicks,Cute,ShoesLowcutLolita2
+shiny bow platform shoes,Purple,2400,600,Kicks,Cute,ShoesLowcutLolita3
+shiny bow platform shoes,Light blue,2400,600,Kicks,Cute,ShoesLowcutLolita4
+shiny bow platform shoes,White,2400,600,Kicks,Cute,ShoesLowcutLolita5
+shiny bow platform shoes,Light purple,2400,600,Kicks,Cute,ShoesLowcutLolita6
+shower sandals,Black,350,87,Able Sisters,Active,ShoesSandalShower0
+shower sandals,White,350,87,Able Sisters,Active,ShoesSandalShower1
+shower sandals,Gold,350,87,Able Sisters,Active,ShoesSandalShower2
+shower sandals,Red,350,87,Able Sisters,Active,ShoesSandalShower3
+shower sandals,Blue,350,87,Able Sisters,Active,ShoesSandalShower4
+ski boots,White,1800,450,Kicks,Active,ShoesKneeSki0
+ski boots,Orange,1800,450,Kicks,Active,ShoesKneeSki1
+ski boots,Red,1800,450,Kicks,Active,ShoesKneeSki2
+ski boots,Lime,1800,450,Kicks,Active,ShoesKneeSki3
+ski boots,Light blue,1800,450,Kicks,Active,ShoesKneeSki4
+ski boots,Purple,1800,450,Kicks,Active,ShoesKneeSki5
+sky-egg shoes,None,NFS,800,Crafting,Active,ShoesLowcutEggsky0
+slip-on loafers,Yellow,490,122,Able Sisters,Simple,ShoesLowcutSlipon0
+slip-on loafers,Red,490,122,Able Sisters,Simple,ShoesLowcutSlipon1
+slip-on loafers,Blue,490,122,Able Sisters,Simple,ShoesLowcutSlipon2
+slip-on loafers,Green,490,122,Able Sisters,Simple,ShoesLowcutSlipon3
+slip-on loafers,Black,490,122,Able Sisters,Simple,ShoesLowcutSlipon4
+slip-on loafers,Light blue,490,122,Able Sisters,Simple,ShoesLowcutSlipon5
+slip-on loafers,White,490,122,Able Sisters,Simple,ShoesLowcutSlipon6
+slip-on loafers,Beige,490,122,Able Sisters,Simple,ShoesLowcutSlipon7
+slip-on sandals,Light blue,560,140,Able Sisters,Active,ShoesSandalResin0
+slip-on sandals,Lime,560,140,Able Sisters,Active,ShoesSandalResin1
+slip-on sandals,Black,560,140,Able Sisters,Active,ShoesSandalResin2
+slip-on sandals,Pink,560,140,Able Sisters,Active,ShoesSandalResin3
+slip-on sandals,Navy blue,560,140,Able Sisters,Active,ShoesSandalResin4
+slip-on sandals,Red,560,140,Able Sisters,Active,ShoesSandalResin5
+slip-on sandals,Orange,560,140,Able Sisters,Active,ShoesSandalResin6
+slip-on sandals,Purple,560,140,Able Sisters,Active,ShoesSandalResin7
+slip-on school shoes,Red,350,87,Kicks,Simple,ShoesLowcutSchool0
+slip-on school shoes,Blue,350,87,Kicks,Simple,ShoesLowcutSchool1
+slip-on school shoes,Green,350,87,Kicks,Simple,ShoesLowcutSchool2
+slip-on school shoes,Yellow,350,87,Kicks,Simple,ShoesLowcutSchool3
+slip-on school shoes,Pink,350,87,Kicks,Simple,ShoesLowcutSchool4
+slippers,Gray,350,87,Kicks,Simple,ShoesLowcutSlipper0
+slippers,Black,350,87,Kicks,Simple,ShoesLowcutSlipper1
+slippers,White,350,87,Kicks,Simple,ShoesLowcutSlipper2
+slippers,Pink,350,87,Kicks,Simple,ShoesLowcutSlipper3
+slippers,Green,350,87,Kicks,Simple,ShoesLowcutSlipper4
+slippers,Blue,350,87,Kicks,Simple,ShoesLowcutSlipper5
+slippers,Red,350,87,Kicks,Simple,ShoesLowcutSlipper6
+slippers,Yellow,350,87,Kicks,Simple,ShoesLowcutSlipper7
+space boots,White,4300,1075,Kicks,Active,ShoesKneeSpaceWhite
+sporty sandals,Red,1300,325,Able Sisters,Active,ShoesSandalSports0
+sporty sandals,Olive,1300,325,Able Sisters,Active,ShoesSandalSports1
+sporty sandals,Blue,1300,325,Able Sisters,Active,ShoesSandalSports2
+sporty sandals,Purple,1300,325,Able Sisters,Active,ShoesSandalSports3
+sporty sandals,Green,1300,325,Able Sisters,Active,ShoesSandalSports4
+sporty sandals,Pink,1300,325,Able Sisters,Active,ShoesSandalSports5
+sporty sandals,Beige,1300,325,Able Sisters,Active,ShoesSandalSports6
+sporty sandals,Gray,1300,325,Able Sisters,Active,ShoesSandalSports7
+steel-toed boots,Brown,2640,660,Able Sisters,Cool,ShoesKneeEngineerboots0
+steel-toed boots,Beige,2640,660,Able Sisters,Cool,ShoesKneeEngineerboots1
+steel-toed boots,Green,2640,660,Able Sisters,Cool,ShoesKneeEngineerboots2
+steel-toed boots,Black,2640,660,Able Sisters,Cool,ShoesKneeEngineerboots3
+steel-toed boots,Red,2640,660,Able Sisters,Cool,ShoesKneeEngineerboots4
+steel-toed boots,Gray,2640,660,Able Sisters,Cool,ShoesKneeEngineerboots5
+stone-egg shoes,None,NFS,800,Crafting,Active,ShoesLowcutEggrock0
+strappy heels,Red,1560,390,Able Sisters,Gorgeous,ShoesLowcutGlitter0
+strappy heels,Blue,1560,390,Able Sisters,Gorgeous,ShoesLowcutGlitter1
+strappy heels,Gold,1560,390,Able Sisters,Gorgeous,ShoesLowcutGlitter2
+strappy heels,Silver,1560,390,Able Sisters,Gorgeous,ShoesLowcutGlitter3
+strappy heels,Black,1560,390,Able Sisters,Gorgeous,ShoesLowcutGlitter4
+strappy heels,Pink,1560,390,Able Sisters,Gorgeous,ShoesLowcutGlitter5
+strappy heels,Green,1560,390,Able Sisters,Gorgeous,ShoesLowcutGlitter6
+strappy heels,Purple,1560,390,Able Sisters,Gorgeous,ShoesLowcutGlitter7
+traditional flower shoes,Red,1800,450,Kicks,Elegant,ShoesLowcutGgotshin0
+traditional flower shoes,Pink,1800,450,Kicks,Elegant,ShoesLowcutGgotshin1
+traditional flower shoes,Blue,1800,450,Kicks,Elegant,ShoesLowcutGgotshin2
+traditional flower shoes,Yellow,1800,450,Kicks,Elegant,ShoesLowcutGgotshin3
+traditional flower shoes,Lime,1800,450,Kicks,Elegant,ShoesLowcutGgotshin4
+trekking shoes,Orange,1500,375,Able Sisters,Active,ShoesHighcutTrekking0
+trekking shoes,Gray,1500,375,Able Sisters,Active,ShoesHighcutTrekking1
+trekking shoes,Black,1500,375,Able Sisters,Active,ShoesHighcutTrekking2
+trekking shoes,Light blue,1500,375,Able Sisters,Active,ShoesHighcutTrekking3
+trekking shoes,Yellow,1500,375,Able Sisters,Active,ShoesHighcutTrekking4
+trekking shoes,Purple,1500,375,Able Sisters,Active,ShoesHighcutTrekking5
+trekking shoes,White,1500,375,Able Sisters,Active,ShoesHighcutTrekking6
+trekking shoes,Brown,1500,375,Able Sisters,Active,ShoesHighcutTrekking7
+velour boots,Ruby red,1920,480,Able Sisters,Elegant,ShoesKneeVelour0
+velour boots,Gray,1920,480,Able Sisters,Elegant,ShoesKneeVelour1
+velour boots,Brown,1920,480,Able Sisters,Elegant,ShoesKneeVelour2
+velour boots,Blue,1920,480,Able Sisters,Elegant,ShoesKneeVelour3
+velour boots,Mustard,1920,480,Able Sisters,Elegant,ShoesKneeVelour4
+vinyl round-toed pumps,Beige,1500,375,Able Sisters,Simple,ShoesLowcutEnamelpumps0
+vinyl round-toed pumps,Mint,1500,375,Able Sisters,Simple,ShoesLowcutEnamelpumps1
+vinyl round-toed pumps,Brown,1500,375,Able Sisters,Simple,ShoesLowcutEnamelpumps2
+vinyl round-toed pumps,Pink,1500,375,Able Sisters,Simple,ShoesLowcutEnamelpumps3
+vinyl round-toed pumps,White,1500,375,Able Sisters,Simple,ShoesLowcutEnamelpumps4
+vinyl round-toed pumps,Black,1500,375,Able Sisters,Simple,ShoesLowcutEnamelpumps5
+visual-punk boots,Black,2200,550,Kicks,Cool,ShoesKneeVisualBlack
+walking shoes,Pink,560,140,Able Sisters,Simple,ShoesLowcutHealth0
+walking shoes,Beige,560,140,Able Sisters,Simple,ShoesLowcutHealth1
+walking shoes,Red,560,140,Able Sisters,Simple,ShoesLowcutHealth2
+water sandals,Pink,1040,260,Able Sisters,Cute,ShoesSandalAqua0
+water sandals,Navy blue,1040,260,Able Sisters,Cute,ShoesSandalAqua1
+water sandals,Red,1040,260,Able Sisters,Cute,ShoesSandalAqua2
+water sandals,Light blue,1040,260,Able Sisters,Cute,ShoesSandalAqua3
+water sandals,Orange,1040,260,Able Sisters,Cute,ShoesSandalAqua4
+water sandals,Purple,1040,260,Able Sisters,Cute,ShoesSandalAqua5
+water sandals,Green,1040,260,Able Sisters,Cute,ShoesSandalAqua6
+water sandals,Yellow,1040,260,Able Sisters,Cute,ShoesSandalAqua7
+water shoes,Pink,900,225,Able Sisters,Active,ShoesLowcutMarine0
+water shoes,Light blue,900,225,Able Sisters,Active,ShoesLowcutMarine1
+water shoes,Orange,900,225,Able Sisters,Active,ShoesLowcutMarine2
+water shoes,Green,900,225,Able Sisters,Active,ShoesLowcutMarine3
+water shoes,Navy blue,900,225,Able Sisters,Active,ShoesLowcutMarine4
+water shoes,Yellow,900,225,Able Sisters,Active,ShoesLowcutMarine5
+water shoes,Red,900,225,Able Sisters,Active,ShoesLowcutMarine6
+water shoes,Black,900,225,Able Sisters,Active,ShoesLowcutMarine7
+water-egg shoes,None,NFS,800,Crafting,Active,ShoesLowcutEggfish0
+wingtip shoes,Black & white,900,225,Able Sisters,Elegant,ShoesLowcutWing0
+wingtip shoes,Brown,900,225,Able Sisters,Elegant,ShoesLowcutWing1
+wingtip shoes,Greige,900,225,Able Sisters,Elegant,ShoesLowcutWing2
+wingtip shoes,Green,900,225,Able Sisters,Elegant,ShoesLowcutWing3
+wingtip shoes,Gray,900,225,Able Sisters,Elegant,ShoesLowcutWing4
+wingtip shoes,Berry red,900,225,Able Sisters,Elegant,ShoesLowcutWing5
+wingtip shoes,Black,900,225,Able Sisters,Elegant,ShoesLowcutWing6
+winklepickers,Red,910,227,Able Sisters,Cool,ShoesLowcutPointedtoe0
+winklepickers,White,910,227,Able Sisters,Cool,ShoesLowcutPointedtoe1
+winklepickers,Black,910,227,Able Sisters,Cool,ShoesLowcutPointedtoe2
+winklepickers,Blue,910,227,Able Sisters,Cool,ShoesLowcutPointedtoe3
+wood-egg shoes,None,NFS,800,Crafting,Active,ShoesLowcutEggforest0
+wooden clogs,Yellow,1300,325,Kicks,Elegant,ShoesLowcutClog0
+wooden clogs,Blue,1300,325,Kicks,Elegant,ShoesLowcutClog1
+wooden clogs,Red,1300,325,Kicks,Elegant,ShoesLowcutClog2
+wooden clogs,Green,1300,325,Kicks,Elegant,ShoesLowcutClog3
+wooden clogs,Brown,1300,325,Kicks,Elegant,ShoesLowcutClog4
+work boots,Red,1920,480,Able Sisters,Cool,ShoesHighcutWorkboots0
+work boots,Purple,1920,480,Able Sisters,Cool,ShoesHighcutWorkboots1
+work boots,Pink,1920,480,Able Sisters,Cool,ShoesHighcutWorkboots2
+work boots,Yellow,1920,480,Able Sisters,Cool,ShoesHighcutWorkboots3
+work boots,White,1920,480,Able Sisters,Cool,ShoesHighcutWorkboots4
+work boots,Blue,1920,480,Able Sisters,Cool,ShoesHighcutWorkboots5
+work boots,Green,1920,480,Able Sisters,Cool,ShoesHighcutWorkboots6
+work boots,Gray,1920,480,Able Sisters,Cool,ShoesHighcutWorkboots7
+wrestling shoes,Red,1080,270,Kicks,Active,ShoesKneeRing0
+wrestling shoes,Blue,1080,270,Kicks,Active,ShoesKneeRing1
+wrestling shoes,Green,1080,270,Kicks,Active,ShoesKneeRing2
+wrestling shoes,Pink,1080,270,Kicks,Active,ShoesKneeRing3
+wrestling shoes,Black,1080,270,Kicks,Active,ShoesKneeRing4
+wrestling shoes,Yellow,1080,270,Kicks,Active,ShoesKneeRing5
+zap boots,White,2640,660,Kicks,Active,ShoesKneeHeroWhite
+zori,Black,4300,1075,Able Sisters,Elegant,ShoesSandalZori0
+zori,Gold,4300,1075,Able Sisters,Elegant,ShoesSandalZori1
+zori,Pink,4300,1075,Able Sisters,Elegant,ShoesSandalZori2
+zori,Light pink,4300,1075,Able Sisters,Elegant,ShoesSandalZori3
+zori,Green,4300,1075,Able Sisters,Elegant,ShoesSandalZori4
+zori,White,4300,1075,Able Sisters,Elegant,ShoesSandalZori5
+zori,Aqua,4300,1075,Able Sisters,Elegant,ShoesSandalZori6
+zori,Red,4300,1075,Able Sisters,Elegant,ShoesSandalZori7

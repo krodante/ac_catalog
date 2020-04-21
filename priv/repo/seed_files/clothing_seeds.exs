@@ -18,7 +18,7 @@ defmodule SeedHelper do
 end
 
 # Import Tops
-File.stream!("priv/static/data/tops.csv")
+File.stream!("assets/static/data/tops.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -29,7 +29,7 @@ File.stream!("priv/static/data/tops.csv")
 end)
 
 # Import Bottoms
-File.stream!("priv/static/data/bottoms.csv")
+File.stream!("assets/static/data/bottoms.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -40,7 +40,7 @@ File.stream!("priv/static/data/bottoms.csv")
 end)
 
 # Import Dresses
-File.stream!("priv/static/data/dresses.csv")
+File.stream!("assets/static/data/dresses.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -51,7 +51,7 @@ File.stream!("priv/static/data/dresses.csv")
 end)
 
 # Import Headwear
-File.stream!("priv/static/data/headwear.csv")
+File.stream!("assets/static/data/headwear.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -62,7 +62,7 @@ File.stream!("priv/static/data/headwear.csv")
 end)
 
 # Import Accessories
-File.stream!("priv/static/data/accessories.csv")
+File.stream!("assets/static/data/accessories.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -73,7 +73,7 @@ File.stream!("priv/static/data/accessories.csv")
 end)
 
 # Import Socks
-File.stream!("priv/static/data/socks.csv")
+File.stream!("assets/static/data/socks.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -84,7 +84,7 @@ File.stream!("priv/static/data/socks.csv")
 end)
 
 # Import Shoes
-File.stream!("priv/static/data/shoes.csv")
+File.stream!("assets/static/data/shoes.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -95,7 +95,7 @@ File.stream!("priv/static/data/shoes.csv")
 end)
 
 # Import Bags
-File.stream!("priv/static/data/bags.csv")
+File.stream!("assets/static/data/bags.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -106,7 +106,7 @@ File.stream!("priv/static/data/bags.csv")
 end)
 
 # Import Umbrellas
-File.stream!("priv/static/data/umbrellas.csv")
+File.stream!("assets/static/data/umbrellas.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 

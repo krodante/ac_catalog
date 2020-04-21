@@ -18,7 +18,7 @@ defmodule SeedHelper do
 end
 
 # Import Music
-File.stream!("priv/static/data/music.csv")
+File.stream!("assets/static/data/music.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -29,7 +29,7 @@ File.stream!("priv/static/data/music.csv")
 end)
 
 # Import Floor
-File.stream!("priv/static/data/floors.csv")
+File.stream!("assets/static/data/floors.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -40,7 +40,7 @@ File.stream!("priv/static/data/floors.csv")
 end)
 
 # Import Wallpaper
-File.stream!("priv/static/data/wallpaper.csv")
+File.stream!("assets/static/data/wallpaper.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -51,7 +51,7 @@ File.stream!("priv/static/data/wallpaper.csv")
 end)
 
 # Import Rugs
-File.stream!("priv/static/data/rugs.csv")
+File.stream!("assets/static/data/rugs.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -62,7 +62,7 @@ File.stream!("priv/static/data/rugs.csv")
 end)
 
 # Import Wall-Mounted
-File.stream!("priv/static/data/wall-mounted.csv")
+File.stream!("assets/static/data/wall-mounted.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -73,7 +73,7 @@ File.stream!("priv/static/data/wall-mounted.csv")
 end)
 
 # Import Miscellaneous Furniture
-File.stream!("priv/static/data/miscellaneous.csv")
+File.stream!("assets/static/data/miscellaneous.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 
@@ -84,7 +84,7 @@ File.stream!("priv/static/data/miscellaneous.csv")
 end)
 
 # Import Housewares
-File.stream!("priv/static/data/housewares.csv")
+File.stream!("assets/static/data/housewares.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
 

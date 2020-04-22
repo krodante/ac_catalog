@@ -24,8 +24,8 @@
         <td>
           <%= owned_item_image(item) %>
         </td>
-        <td><%= item_type(item) %></td>
         <td><%= item.name %></td>
+        <td><%= item_type(item) %></td>
         <td><%= item.buy_price %></td>
         <td><%= item.sell_price %></td>
         <td><%= source.name %></td>

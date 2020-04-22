@@ -13,11 +13,52 @@
 }
 
 .item {
-  height: 50px;
-  width: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  max-height: 50px;
+  max-width: 50px;
 }
 
 .half-column {
   width: 48%;
   float: left;
+}
+
+.header-container {
+  display: inline-block;
+}
+
+.header-column.left {
+  width: 60%;
+  float: left;
+  font-size: 2.2rem;
+}
+
+.header-column.right {
+  width: 40%;
+  float: left;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  table {
+    max-width: 768px;
+    font-size: 1.5rem;
+  }
+
+  td, th {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .header-column.left {
+    width: 60%;
+    float: left;
+    font-size: 2.4rem;
+  }
+
+  .header-column.right {
+    width: 40%;
+    float: left;
+    font-size: 1.4rem;
+  }
 }

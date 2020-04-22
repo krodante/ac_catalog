@@ -13,24 +13,30 @@
   </head>
   <body>
     <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li>
-              <%= if Pow.Plug.current_user(@conn) do %>
-                <span>Signed in as <%= @conn.assigns.current_user.email %></span>
-                <span><%= link "My Items", to: Routes.owned_items_path(@conn, :index) %></span>
-                <span><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %></span>
-              <% else %>
-                <span><%= link "Register", to: Routes.pow_registration_path(@conn, :new) %></span>
-                <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>
-                <span><%= link("Reset password", to: Routes.pow_reset_password_reset_password_path(@conn, :new))
- %></span>
-              <% end %>
-            </li>
-          </ul>
-        </nav>
-        <%= link("Animal Crossing: New Horizons Catalog", to: "/") %>
+      <div class="container header-container">
+          <div class="header-column left">
+            <%= link("Animal Crossing: New Horizons Catalog", to: "/") %>
+          </div>
+          <div class="header-column right">
+            <nav role="navigation">
+              <ul>
+                <li>
+                  <%= if Pow.Plug.current_user(@conn) do %>
+                    <span>Signed in as:</span>
+                    <br>
+                    <span><%= @conn.assigns.current_user.email %></span>
+                    <span><%= link "My Items", to: Routes.owned_items_path(@conn, :index) %></span>
+                    <span><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %></span>
+                  <% else %>
+                    <span><%= link "Register", to: Routes.pow_registration_path(@conn, :new) %></span>
+                    <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>
+                    <span><%= link("Reset password", to: Routes.pow_reset_password_reset_password_path(@conn, :new))
+    %></span>
+                  <% end %>
+                </li>
+              </ul>
+            </nav>
+          </div>
       </div>
     </header>
 

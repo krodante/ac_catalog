@@ -4,7 +4,7 @@ defmodule AcCatalogWeb.ClothingView do
 
   def show_owned(conn, clothing_id, table_name) do
     case Pow.Plug.current_user(conn) do
-      nil -> "You must sign in to use this feature"
+      nil -> link "Sign in", to: Routes.pow_session_path(conn, :new)
       current_user ->
         category_column = String.to_atom("owned_#{table_name}_ids")
 

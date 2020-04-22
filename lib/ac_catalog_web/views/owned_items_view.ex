@@ -18,7 +18,7 @@ defmodule AcCatalogWeb.OwnedItemsView do
   def share_items_link(conn) do
     case conn.assigns.current_user do
       nil -> ""
-      user -> link("Share My Items", to: Routes.shareable_link_path(conn, :index, user.id))
+      user -> link("Share My Items", to: Routes.shareable_link_path(conn, :index, user.id), target: "_blank")
     end
   end
 

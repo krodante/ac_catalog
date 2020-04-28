@@ -29,15 +29,15 @@ File.stream!("assets/static/data/music.csv")
 end)
 
 # Import Floor
-File.stream!("assets/static/data/floors.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# File.stream!("assets/static/data/floors.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Floors.create_floor
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Floors.create_floor
+# end)
 
 # Import Wallpaper
 File.stream!("assets/static/data/wallpaper.csv")
@@ -51,15 +51,15 @@ File.stream!("assets/static/data/wallpaper.csv")
 end)
 
 # Import Rugs
-File.stream!("assets/static/data/rugs.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# File.stream!("assets/static/data/rugs.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Rugs.create_rug
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Rugs.create_rug
+# end)
 
 # Import Wall-Mounted
 File.stream!("assets/static/data/wall-mounted.csv")
@@ -84,12 +84,12 @@ File.stream!("assets/static/data/miscellaneous.csv")
 end)
 
 # Import Housewares
-File.stream!("assets/static/data/housewares.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# File.stream!("assets/static/data/housewares.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Housewares.create_houseware
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Housewares.create_houseware
+# end)

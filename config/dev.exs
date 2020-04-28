@@ -54,17 +54,6 @@ config :ac_catalog, AcCatalogWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
-# Watch static and templates for browser reloading.
-config :ac_catalog, AcCatalogWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/ac_catalog_web/(live|views)/.*(ex)$",
-      ~r"lib/ac_catalog_web/templates/.*(eex)$"
-    ]
-  ]
-
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 

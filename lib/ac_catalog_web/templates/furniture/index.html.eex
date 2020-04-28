@@ -13,20 +13,6 @@
     </tr>
   </thead>
   <tbody>
-    <%= for furniture <- @furnitures do %>
-      <% source = AcCatalog.Sources.get_source!(furniture.source_id) %>
-
-      <tr>
-        <td><%= img_tag("https://acnhcdn.com/acdb/#{@category}/#{furniture.filename}.png", class: "item") %></td>
-        <td><%= furniture.name %></td>
-        <td><%= furniture.buy_price %></td>
-        <td><%= furniture.sell_price %></td>
-        <td><%= source.name %></td>
-
-        <td>
-          <%= show_owned(@conn, furniture.id, @table_name) %>
-        </td>
-      </tr>
-    <% end %>
+    <%= show_items(@conn, @category, @table_name) %>
   </tbody>
 </table>

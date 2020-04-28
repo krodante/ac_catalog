@@ -29,28 +29,28 @@ File.stream!("assets/static/data/tops.csv")
 end)
 
 # Import Bottoms
-File.stream!("assets/static/data/bottoms.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# File.stream!("assets/static/data/bottoms.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Bottoms.create_bottom
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Bottoms.create_bottom
+# end)
 
-# Import Dresses
-File.stream!("assets/static/data/dresses.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# # Import Dresses
+# File.stream!("assets/static/data/dresses.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Dresses.create_dress
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Dresses.create_dress
+# end)
 
-# Import Headwear
+# # Import Headwear
 File.stream!("assets/static/data/headwear.csv")
 |> CSV.decode!(headers: true)
 |> Enum.each(fn row ->
@@ -61,57 +61,57 @@ File.stream!("assets/static/data/headwear.csv")
   |> AcCatalog.Headwears.create_headwear
 end)
 
-# Import Accessories
-File.stream!("assets/static/data/accessories.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# # Import Accessories
+# File.stream!("assets/static/data/accessories.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Accessories.create_accessory
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Accessories.create_accessory
+# end)
 
-# Import Socks
-File.stream!("assets/static/data/socks.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# # Import Socks
+# File.stream!("assets/static/data/socks.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Socks.create_sock
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Socks.create_sock
+# end)
 
-# Import Shoes
-File.stream!("assets/static/data/shoes.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# # Import Shoes
+# File.stream!("assets/static/data/shoes.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Shoes.create_shoe
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Shoes.create_shoe
+# end)
 
-# Import Bags
-File.stream!("assets/static/data/bags.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# # Import Bags
+# File.stream!("assets/static/data/bags.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Bags.create_bag
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Bags.create_bag
+# end)
 
-# Import Umbrellas
-File.stream!("assets/static/data/umbrellas.csv")
-|> CSV.decode!(headers: true)
-|> Enum.each(fn row ->
+# # Import Umbrellas
+# File.stream!("assets/static/data/umbrellas.csv")
+# |> CSV.decode!(headers: true)
+# |> Enum.each(fn row ->
 
-  row
-  |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
-  |> Map.delete("source")
-  |> AcCatalog.Umbrellas.create_umbrella
-end)
+#   row
+#   |> Map.put("source_id", SeedHelper.get_source_id(row["source"]))
+#   |> Map.delete("source")
+#   |> AcCatalog.Umbrellas.create_umbrella
+# end)

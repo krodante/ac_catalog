@@ -41,11 +41,11 @@ defmodule SeedHelper do
   def migrate_data(user, module, column_name, new_column_name, old_ids, new_ids) when old_ids == [], do: IO.puts("User: #{user.email}, Module: #{module} - Done!")
 
   def migrate_data(user, module, column_name, new_column_name, old_ids, new_ids) do
-    Enum.each(old_ids, fn owned_id ->
+    Enum.each(old_ids, fn old_id ->
       function = function_name(module)
       new_column_name = "#{csv_module(module)}_ids" |> String.replace("-", "_") |> String.downcase |> String.to_existing_atom()
 
-      owned_item = apply(String.to_existing_atom("Elixir.AcCatalog.#{module}"), String.to_existing_atom(function), [owned_id])
+      owned_item = apply(String.to_existing_atom("Elixir.AcCatalog.#{module}"), String.to_existing_atom(function), [old_id])
 
       filename = "assets/static/data/#{csv_module(module)}-Table 1.csv"
 
@@ -59,15 +59,15 @@ defmodule SeedHelper do
         end
       end)
 
-      old_ids = old_ids -- [owned_id]
+      owned_ids = old_ids -- [old_id]
 
       new_data = new_ids ++ [csv_item["Unique Entry ID"]]
 
-      changeset = AcCatalog.Accounts.User.item_changeset(user, %{new_column_name => new_data, column_name => old_ids})
+      changeset = AcCatalog.Accounts.User.item_changeset(user, %{new_column_name => new_data, column_name => owned_ids})
 
       AcCatalog.Repo.update!(changeset)
 
-      migrate_data(user, module, column_name, new_column_name, old_ids, new_data)
+      migrate_data(user, module, column_name, new_column_name, owned_ids, new_data)
     end)
   end
 

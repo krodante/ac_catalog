@@ -57,7 +57,7 @@ defmodule SeedHelper do
       csv_item = File.stream!(filename)
       |> CSV.decode!(headers: true)
       |> Enum.find(fn row ->
-        if Map.has_key?(row, "Variation") do
+        if Map.has_key?(row, "Variation") and Map.has_key?(owned_item, :variation) do
           row["Name"] == owned_item.name and row["Variation"] == owned_item.variation
         else
           row["Filename"] == owned_item.filename

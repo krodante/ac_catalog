@@ -74,14 +74,12 @@ end
 
 AcCatalog.Repo.all(AcCatalog.Accounts.User)
 |> Enum.each(fn user ->
-  @modules
-    |> Enum.each(fn module ->
-      column_name = String.to_existing_atom("owned_#{Macro.underscore(module)}_ids")
-      new_column_name = "#{csv_module(module)}_ids" |> String.replace("-", "_") |> String.downcase |> String.to_existing_atom()
-      old_ids = Map.get(user, column_name)
-      new_ids = Map.get(user, new_column_name)
+  Enum.each(@modules, fn module ->
+    column_name = String.to_existing_atom("owned_#{Macro.underscore(module)}_ids")
+    new_column_name = "#{csv_module(module)}_ids" |> String.replace("-", "_") |> String.downcase |> String.to_existing_atom()
+    old_ids = Map.get(user, column_name)
+    new_ids = Map.get(user, new_column_name)
 
-      migrate_data(user, module, column_name, new_column_name, old_ids, new_ids)
-    end)
-  end
+    migrate_data(user, module, column_name, new_column_name, old_ids, new_ids)
+  end)
 end)

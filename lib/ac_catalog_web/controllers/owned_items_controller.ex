@@ -23,16 +23,15 @@ defmodule AcCatalogWeb.OwnedItemsController do
     furniture = AcCatalog.Furnitures.list_owned_furnitures(user)
     clothing = AcCatalog.Clothings.list_owned_clothing(user)
 
-    render(conn, "index.html", items: furniture ++ clothing)
+    owned_ids = User.owned_ids(user)
+
+    render(conn, "index.html", items: owned_ids)
   end
 
   def index(conn, _params) do
     current_user = Pow.Plug.current_user(conn)
 
-    furniture = AcCatalog.Furnitures.list_owned_furnitures(current_user)
-    clothing = AcCatalog.Clothings.list_owned_clothing(current_user)
-
-    render(conn, "index.html", items: furniture ++ clothing)
+    render(conn, "index.html", user: current_user)
   end
 
 end

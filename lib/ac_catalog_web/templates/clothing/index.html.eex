@@ -1,6 +1,6 @@
 <h1>Listing <%= String.capitalize(@category) %> </h1>
 
-<table class="items">
+<table>
   <thead>
     <tr>
       <th>Image</th>
@@ -10,26 +10,11 @@
       <th>Sell price</th>
       <th>Source</th>
 
-
       <th>Owned?</th>
     </tr>
   </thead>
   <tbody>
-<%= for clothing <- @clothing do %>
-  <% source = AcCatalog.Sources.get_source!(clothing.source_id) %>
-    <tr>
-      <td><%= img_tag("https://acnhcdn.com/acdb/#{@category}/#{clothing.filename}.png", class: "item") %></td>
-      <td><%= clothing.name %></td>
-      <td><%= if has_variation?(clothing), do: clothing.variation, else: "N/A" %></td>
-      <td><%= clothing.buy_price %></td>
-      <td><%= clothing.sell_price %></td>
-      <td><%= source.name %></td>
-
-      <td>
-        <%= show_owned(@conn, clothing.id, @table_name) %>
-      </td>
-    </tr>
-<% end %>
+    <%= show_items(@conn, @category, @table_name) %>
   </tbody>
 </table>
 

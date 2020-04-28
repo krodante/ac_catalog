@@ -20,66 +20,9 @@ defmodule AcCatalogWeb.ClothingController do
 
   def category_for(table_name) do
     case table_name do
-      "accessories" -> "accessories"
-      "bags" -> "bags"
-      "bottoms" -> "bottoms"
-      "dresses" -> "dresses"
       "headwears" -> "headwear"
-      "shoes" -> "shoes"
-      "socks" -> "socks"
-      "tops" -> "tops"
-      "umbrellas" -> "umbrellas"
+      _ -> table_name
     end
-  end
-
-  def add(conn, params) do
-    table_name = params["table_name"]
-    category = category_for(table_name)
-    id = params["id"]
-    current_user = conn.assigns.current_user
-
-    table_name_column = String.to_atom("owned_#{table_name}_ids")
-
-    owned_ids = Map.get(current_user, table_name_column)
-
-    new_data = Map.new(
-      [
-        {table_name_column, owned_ids ++ [id]}
-      ]
-    )
-
-    changeset = AcCatalog.Accounts.User.item_changeset(current_user, new_data)
-
-    {:ok, _user} = AcCatalog.Repo.update(changeset)
-
-    conn
-    |> put_flash(:info, "Clothing updated successfully.")
-    |> redirect(to: "/clothing/#{category}")
-  end
-
-  def remove(conn, params) do
-    table_name = params["table_name"]
-    category = category_for(table_name)
-    id = String.to_integer(params["id"])
-    current_user = conn.assigns.current_user
-
-    table_name_column = String.to_atom("owned_#{table_name}_ids")
-
-    owned_ids = Map.get(current_user, table_name_column)
-
-    new_data = Map.new(
-      [
-        {table_name_column, owned_ids -- [id]}
-      ]
-    )
-
-    changeset = AcCatalog.Accounts.User.item_changeset(current_user, new_data)
-
-    {:ok, _user} = AcCatalog.Repo.update(changeset)
-
-    conn
-    |> put_flash(:info, "Clothing updated successfully.")
-    |> redirect(to: "/clothing/#{category}")
   end
 
   def index(conn, _params) do

@@ -18,20 +18,6 @@
     </tr>
   </thead>
   <tbody>
-    <%= for item <- @items do %>
-      <% source = AcCatalog.Sources.get_source!(item.source_id) %>
-      <tr>
-        <td>
-          <%= owned_item_image(item) %>
-        </td>
-        <td><%= item.name %></td>
-        <td><%= item_type(item) %></td>
-        <td><%= item.buy_price %></td>
-        <td><%= item.sell_price %></td>
-        <td><%= source.name %></td>
-
-        <td><%= remove_link(@conn, item) %></td>
-      </tr>
-    <% end %>
+    <%= show_owned_items(@conn, @user) %>
   </tbody>
 </table>

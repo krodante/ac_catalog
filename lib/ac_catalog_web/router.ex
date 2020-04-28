@@ -61,11 +61,8 @@ defmodule AcCatalogWeb.Router do
 
     get "/owned_items/", OwnedItemsController, :index
 
-    put "/clothing/:table_name/add/:id", ClothingController, :add
-    put "/clothing/:table_name/remove/:id", ClothingController, :remove
-
-    put "/furniture/:table_name/add/:id", FurnitureController, :add
-    put "/furniture/:table_name/remove/:id", FurnitureController, :remove
+    put "/furniture/:module/add/:id", FurnitureController, :add
+    put "/furniture/:module/remove/:id", FurnitureController, :remove
   end
 
   # Other scopes may use custom stacks.

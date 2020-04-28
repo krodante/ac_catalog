@@ -27,16 +27,17 @@ defmodule AcCatalogWeb.FurnitureController do
       "rugs" -> "rugs"
       "wall_mounteds" -> "wall-mounted"
       "wallpapers" -> "wallpapers"
+      _ -> table_name
     end
   end
 
   def add(conn, params) do
-    table_name = params["table_name"]
+    table_name = params["module"]
     category = category_for(table_name)
     id = params["id"]
     current_user = conn.assigns.current_user
 
-    table_name_column = String.to_atom("owned_#{table_name}_ids")
+    table_name_column = String.to_existing_atom("#{table_name}_ids")
 
     owned_ids = Map.get(current_user, table_name_column)
 
@@ -51,17 +52,16 @@ defmodule AcCatalogWeb.FurnitureController do
     {:ok, _user} = AcCatalog.Repo.update(changeset)
 
     conn
-    |> put_flash(:info, "Furniture updated successfully.")
-    |> redirect(to: "/furniture/#{category}")
+    |> put_flash(:info, "Item updated successfully.")
+    |> redirect(to: NavigationHistory.last_path(conn))
   end
 
   def remove(conn, params) do
-    table_name = params["table_name"]
-    category = category_for(table_name)
-    id = String.to_integer(params["id"])
+    table_name = params["module"]
+    id = params["id"]
     current_user = conn.assigns.current_user
 
-    table_name_column = String.to_atom("owned_#{table_name}_ids")
+    table_name_column = String.to_existing_atom("#{table_name}_ids")
 
     owned_ids = Map.get(current_user, table_name_column)
 
@@ -76,7 +76,7 @@ defmodule AcCatalogWeb.FurnitureController do
     {:ok, _user} = AcCatalog.Repo.update(changeset)
 
     conn
-    |> put_flash(:info, "Furniture updated successfully.")
+    |> put_flash(:info, "Item updated successfully.")
     |> redirect(to: NavigationHistory.last_path(conn))
   end
 

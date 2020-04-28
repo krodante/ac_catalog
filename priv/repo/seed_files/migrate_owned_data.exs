@@ -1,22 +1,24 @@
 defmodule SeedHelper do
-  @modules [
-    "Accessories",
-    "Bags",
-    "Bottoms",
-    "Dresses",
-    "Floors",
-    "Headwears",
-    "Housewares",
-    "MiscFurnitures",
-    "Musics",
-    "Rugs",
-    "Shoes",
-    "Socks",
-    "Tops",
-    "Umbrellas",
-    "WallMounteds",
-    "Wallpapers"
-  ]
+  def modules() do
+    [
+      "Accessories",
+      "Bags",
+      "Bottoms",
+      "Dresses",
+      "Floors",
+      "Headwears",
+      "Housewares",
+      "MiscFurnitures",
+      "Musics",
+      "Rugs",
+      "Shoes",
+      "Socks",
+      "Tops",
+      "Umbrellas",
+      "WallMounteds",
+      "Wallpapers"
+    ]
+  end
 
   def csv_module(module) do
     case module do
@@ -38,7 +40,7 @@ defmodule SeedHelper do
     end
   end
 
-  def migrate_data(user, module, column_name, new_column_name, new_ids) when old_ids == [], do: IO.puts("User: #{user.email}, Module: #{module} - Done!")
+  def migrate_data(user, module, column_name, new_column_name, old_ids, new_ids) when old_ids == [], do: IO.puts("User: #{user.email}, Module: #{module} - Done!")
 
   def migrate_data(user, module, column_name, new_column_name, old_ids, new_ids) do
     Enum.each(old_ids, fn old_id ->
@@ -74,12 +76,12 @@ end
 
 AcCatalog.Repo.all(AcCatalog.Accounts.User)
 |> Enum.each(fn user ->
-  Enum.each(@modules, fn module ->
+  Enum.each(SeedHelper.modules(), fn module ->
     column_name = String.to_existing_atom("owned_#{Macro.underscore(module)}_ids")
-    new_column_name = "#{csv_module(module)}_ids" |> String.replace("-", "_") |> String.downcase |> String.to_existing_atom()
+    new_column_name = "#{SeedHelper.csv_module(module)}_ids" |> String.replace("-", "_") |> String.downcase |> String.to_existing_atom()
     old_ids = Map.get(user, column_name)
     new_ids = Map.get(user, new_column_name)
 
-    migrate_data(user, module, column_name, new_column_name, old_ids, new_ids)
+    SeedHelper.migrate_data(user, module, column_name, new_column_name, old_ids, new_ids)
   end)
 end)

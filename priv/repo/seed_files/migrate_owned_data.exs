@@ -38,13 +38,10 @@ defmodule SeedHelper do
     end
   end
 
-  def blah(user, module, column_name, new_column_name, old_ids, new_ids) when old_ids == [], do: IO.puts("Done!")
+  def migrate_data(user, module, column_name, new_column_name, old_ids, new_ids) when old_ids == [], do: IO.puts("User: #{user.email}, Module: #{module} - Done!")
 
-  def blah(user, module, column_name, new_column_name, old_ids, new_ids) do
-    IO.inspect(old_ids)
-    IO.inspect("module: #{module}")
+  def migrate_data(user, module, column_name, new_column_name, old_ids, new_ids) do
     Enum.each(old_ids, fn owned_id ->
-      IO.inspect("owned_id: #{owned_id}")
       function = function_name(module)
       new_column_name = "#{csv_module(module)}_ids" |> String.replace("-", "_") |> String.downcase |> String.to_existing_atom()
 
@@ -70,7 +67,7 @@ defmodule SeedHelper do
 
       AcCatalog.Repo.update!(changeset)
 
-      blah(user, module, column_name, new_column_name, old_ids, new_data)
+      migrate_data(user, module, column_name, new_column_name, old_ids, new_data)
     end)
   end
 
@@ -82,12 +79,10 @@ defmodule SeedHelper do
       old_ids = Map.get(user, column_name)
       new_ids = Map.get(user, new_column_name)
 
-      blah(user, module, column_name, new_column_name, old_ids, new_ids)
+      migrate_data(user, module, column_name, new_column_name, old_ids, new_ids)
     end)
   end
 end
 
 AcCatalog.Repo.all(AcCatalog.Accounts.User)
 |> Enum.each(fn user -> SeedHelper.migrate_data(user) end)
-AcCatalog.Repo.all(AcCatalog.Accounts.User) |> List.last |> IO.inspect
-

@@ -40,7 +40,10 @@ defmodule SeedHelper do
     end
   end
 
-  def migrate_data(user, module, column_name, new_column_name, old_ids, new_ids) when old_ids == [], do: IO.puts("User: #{user.email}, Module: #{module} - Done!")
+  def migrate_data(user, module, column_name, new_column_name, [] = old_ids, new_ids) when old_ids == [] do
+    IO.puts("User: #{user.email}, Module: #{module} - Done!")
+    nil
+  end
 
   def migrate_data(user, module, column_name, new_column_name, old_ids, new_ids) do
     Enum.each(old_ids, fn old_id ->
@@ -74,8 +77,8 @@ defmodule SeedHelper do
   end
 end
 
-AcCatalog.Repo.all(AcCatalog.Accounts.User)
-|> Enum.each(fn user ->
+users = AcCatalog.Repo.all(AcCatalog.Accounts.User)
+Enum.each(users, fn user ->
   Enum.each(SeedHelper.modules(), fn module ->
     column_name = String.to_existing_atom("owned_#{Macro.underscore(module)}_ids")
     new_column_name = "#{SeedHelper.csv_module(module)}_ids" |> String.replace("-", "_") |> String.downcase |> String.to_existing_atom()

@@ -29,7 +29,7 @@ defmodule AcCatalogWeb.OwnedItemsView do
       |> Enum.map(fn item ->
         content_tag(:tr) do
           [
-            content_tag(:td, img_tag("https://acnhcdn.com/latest/FtrIcon/#{row["Filename"]}.png", class: "item")),
+            content_tag(:td, img_tag("https://acnhcdn.com/latest/FtrIcon/#{item["Filename"]}.png", class: "item")),
             content_tag(:td, item["Name"]),
             content_tag(:td, item["Variation"]),
             content_tag(:td, item["Buy"]),

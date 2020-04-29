@@ -9,24 +9,6 @@ defmodule AcCatalog.Accounts.User do
   schema "users" do
     pow_user_fields()
 
-    field :owned_accessories_ids, {:array, :integer}
-    field :owned_bags_ids, {:array, :integer}
-    field :owned_bottoms_ids, {:array, :integer}
-    field :owned_dresses_ids, {:array, :integer}
-    field :owned_headwears_ids, {:array, :integer}
-    field :owned_shoes_ids, {:array, :integer}
-    field :owned_socks_ids, {:array, :integer}
-    field :owned_tops_ids, {:array, :integer}
-    field :owned_umbrellas_ids, {:array, :integer}
-
-    field :owned_floors_ids, {:array, :integer}
-    field :owned_housewares_ids, {:array, :integer}
-    field :owned_misc_furnitures_ids, {:array, :integer}
-    field :owned_musics_ids, {:array, :integer}
-    field :owned_rugs_ids, {:array, :integer}
-    field :owned_wall_mounteds_ids, {:array, :integer}
-    field :owned_wallpapers_ids, {:array, :integer}
-
     field :accessories_ids, {:array, :string}
     field :bags_ids, {:array, :string}
     field :bottoms_ids, {:array, :string}
@@ -62,12 +44,11 @@ defmodule AcCatalog.Accounts.User do
 
   def item_changeset(user_or_changeset, attrs) do
     user_or_changeset
-    |> cast(attrs, [:owned_accessories_ids, :owned_bags_ids, :owned_bottoms_ids, :owned_dresses_ids,
-      :owned_headwears_ids, :owned_shoes_ids, :owned_socks_ids, :owned_tops_ids, :owned_umbrellas_ids,
-      :owned_floors_ids, :owned_housewares_ids, :owned_misc_furnitures_ids, :owned_musics_ids,
-      :owned_rugs_ids, :owned_wall_mounteds_ids, :owned_wallpapers_ids, :accessories_ids, :bags_ids, :bottoms_ids, :dresses_ids, :headwear_ids, :shoes_ids, :socks_ids, :tops_ids, :umbrellas_ids,
-:floors_ids, :housewares_ids, :miscellaneous_ids, :music_ids, :rugs_ids, :wall_mounted_ids, :wallpapers_ids,
-:achievements_ids, :art_ids, :construction_ids, :fencing_ids, :fish_ids, :fossils_mounteds_ids, :nook_miles_ids, :photos_ids, :posters_ids, :recipes_ids, :tools_ids ])
+    |> cast(attrs, [
+      :accessories_ids, :bags_ids, :bottoms_ids, :dresses_ids, :headwear_ids, :shoes_ids, :socks_ids, :tops_ids, :umbrellas_ids,
+      :floors_ids, :housewares_ids, :miscellaneous_ids, :music_ids, :rugs_ids, :wall_mounted_ids, :wallpapers_ids,
+      :achievements_ids, :art_ids, :construction_ids, :fencing_ids, :fish_ids, :fossils_mounteds_ids, :nook_miles_ids, :photos_ids, :posters_ids, :recipes_ids, :tools_ids
+    ])
   end
 
   def changeset(user_or_changeset, attrs) do

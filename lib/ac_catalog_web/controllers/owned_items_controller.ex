@@ -45,14 +45,15 @@ defmodule AcCatalogWeb.OwnedItemsController do
     table_name_column = String.to_existing_atom("#{table_name}_ids")
 
     owned_ids = Map.get(current_user, table_name_column)
+    new_ids = apply(Kernel, operation, [owned_ids, [id]]) |> Enum.uniq
 
     new_data = Map.new(
       [
-        {table_name_column, apply(Kernel, operation, [owned_ids, [id]])}
+        {table_name_column, new_ids}
       ]
     )
 
-    changeset = AcCatalog.Accounts.User.item_changeset(current_user, Enum.uniq(new_data))
+    changeset = AcCatalog.Accounts.User.item_changeset(current_user, new_data)
 
     {:ok, _user} = AcCatalog.Repo.update(changeset)
 

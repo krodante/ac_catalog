@@ -1,5 +1,0 @@
-<h1>Edit Furniture</h1>
-
-<%= render "form.html", Map.put(assigns, :action, Routes.furniture_path(@conn, :update, @furniture)) %>
-
-<span><%= link "Back", to: Routes.furniture_path(@conn, :index) %></span>

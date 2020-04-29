@@ -32,7 +32,7 @@ defmodule AcCatalog.Accounts.User do
     field :construction_ids, {:array, :string}
     field :fencing_ids, {:array, :string}
     field :fish_ids, {:array, :string}
-    field :fossils_mounteds_ids, {:array, :string}
+    field :fossils_ids, {:array, :string}
     field :nook_miles_ids, {:array, :string}
     field :photos_ids, {:array, :string}
     field :posters_ids, {:array, :string}
@@ -47,7 +47,7 @@ defmodule AcCatalog.Accounts.User do
     |> cast(attrs, [
       :accessories_ids, :bags_ids, :bottoms_ids, :dresses_ids, :headwear_ids, :shoes_ids, :socks_ids, :tops_ids, :umbrellas_ids,
       :floors_ids, :housewares_ids, :miscellaneous_ids, :music_ids, :rugs_ids, :wall_mounted_ids, :wallpapers_ids,
-      :achievements_ids, :art_ids, :construction_ids, :fencing_ids, :fish_ids, :fossils_mounteds_ids, :nook_miles_ids, :photos_ids, :posters_ids, :recipes_ids, :tools_ids
+      :achievements_ids, :art_ids, :construction_ids, :fencing_ids, :fish_ids, :fossils_ids, :nook_miles_ids, :photos_ids, :posters_ids, :recipes_ids, :tools_ids
     ])
   end
 

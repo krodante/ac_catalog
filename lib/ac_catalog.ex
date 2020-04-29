@@ -8,7 +8,6 @@ defmodule AcCatalog do
   """
   def column_names_from(csv_name) do
     case csv_name do
-      "Fossils" -> "fossils_mounteds"
       "Nook Miles" -> "nook_miles"
       "Wall-mounted" -> "wall_mounted"
       _ -> String.downcase(csv_name)
@@ -17,7 +16,6 @@ defmodule AcCatalog do
 
   def csv_name_from(column_name) do
     case column_name do
-      "fossils_mounteds" -> "Fossils"
       "nook_miles" -> "Nook Miles"
       "wall_mounted" -> "Wall-mounted"
       _ -> String.capitalize(column_name)

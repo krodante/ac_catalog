@@ -20,12 +20,7 @@ defmodule AcCatalogWeb.OwnedItemsController do
   def index(conn, %{"shared_user_id" => user_id}) do
     user = AcCatalog.Repo.get!(User, user_id)
 
-    furniture = AcCatalog.Furnitures.list_owned_furnitures(user)
-    clothing = AcCatalog.Clothings.list_owned_clothing(user)
-
-    owned_ids = User.owned_ids(user)
-
-    render(conn, "index.html", items: owned_ids)
+    render(conn, "index.html", user: user)
   end
 
   def index(conn, _params) do
@@ -34,4 +29,35 @@ defmodule AcCatalogWeb.OwnedItemsController do
     render(conn, "index.html", user: current_user)
   end
 
+  def add(conn, params) do
+    mutate(conn, params, :++)
+  end
+
+  def remove(conn, params) do
+    mutate(conn, params, :--)
+  end
+
+  def mutate(conn, params, operation) do
+    table_name = params["module"]
+    id = params["id"]
+    current_user = conn.assigns.current_user
+
+    table_name_column = String.to_existing_atom("#{table_name}_ids")
+
+    owned_ids = Map.get(current_user, table_name_column)
+
+    new_data = Map.new(
+      [
+        {table_name_column, apply(Kernel, operation, [owned_ids, [id]])}
+      ]
+    )
+
+    changeset = AcCatalog.Accounts.User.item_changeset(current_user, Enum.uniq(new_data))
+
+    {:ok, _user} = AcCatalog.Repo.update(changeset)
+
+    conn
+    |> put_flash(:info, "Item updated successfully.")
+    |> redirect(to: NavigationHistory.last_path(conn))
+  end
 end

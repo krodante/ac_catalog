@@ -1,0 +1,27 @@
+<h1>Listing Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <%= if @conn.assigns.has_variation do %>
+        <th>Type</th>
+      <% end %>
+      <%= if @conn.assigns.has_buy_price do %>
+        <th>Buy Price</th>
+      <% end %>
+      <%= if @conn.assigns.has_sell_price do %>
+        <th>Sell Price</th>
+      <% end %>
+      <%= if @conn.assigns.has_source do %>
+        <th>Source</th>
+      <% end %>
+
+      <th>Owned?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= show_items(@conn, @user) %>
+  </tbody>
+</table>

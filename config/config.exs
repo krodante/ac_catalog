@@ -40,6 +40,16 @@ config :ac_catalog, AcCatalogWeb.Pow.Mailer,
   ssl: false, # can be `true`
   retries: 1
 
+config :ac_catalog, :app_vars,
+  csv_names: ["Accessories", "Achievements", "Art", "Bags", "Bottoms", "Construction",
+    "Dresses", "Fencing", "Fish", "Floors", "Fossils", "Headwear",
+    "Housewares", "Miscellaneous", "Music", "Nook Miles", "Posters",
+    "Recipes", "Rugs", "Shoes", "Socks", "Tools", "Tops", "Umbrellas",
+    "Wall-mounted", "Wallpapers"],
+  furniture_types: ["Art", "Floors", "Housewares", "Miscellaneous", "Posters", "Rugs", "Wall-mounted", "Wallpapers"],
+  clothing_types: ["Accessories", "Bags", "Bottoms", "Dresses", "Headwear", "Shoes", "Socks", "Tops", "Umbrellas"],
+  other_types: ["Achievements", "Construction", "Fencing", "Fish", "Fossils", "Music", "Nook Miles", "Recipes", "Tools"]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

@@ -19,8 +19,8 @@
   max-width: 50px;
 }
 
-.half-column {
-  width: 48%;
+.third-column {
+  width: 33%;
   float: left;
 }
 

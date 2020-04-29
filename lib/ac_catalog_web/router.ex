@@ -4,6 +4,8 @@ defmodule AcCatalogWeb.Router do
   use Pow.Extension.Phoenix.Router,
     extensions: [PowResetPassword, PowEmailConfirmation]
 
+  @csv_names Application.get_env(:ac_catalog, :app_vars)[:csv_names]
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -11,7 +13,7 @@ defmodule AcCatalogWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :put_root_layout, {AcCatalogWeb.LayoutView, :root}
-    plug NavigationHistory.Tracker, included_paths: [~r(/clothing.*), ~r(/furniture.*/), ~r(/owned_items.*/)]
+    plug NavigationHistory.Tracker, excluded_paths: [~r(/session.*), ~r(/reset-password.*/), ~r(/registration.*/), ~r(/confirm-email.*/), ~r(/clothing.*/), ~r(/furniture.*/)]
   end
 
   pipeline :protected do
@@ -37,23 +39,9 @@ defmodule AcCatalogWeb.Router do
 
     get "/owned_items/:shared_user_id", OwnedItemsController, :index, as: :shareable_link
 
-    get "/furniture/housewares", FurnitureController, :housewares, as: :housewares
-    get "/furniture/floors", FurnitureController, :floors, as: :floors
-    get "/furniture/miscellaneous", FurnitureController, :miscellaneous, as: :miscellaneous
-    get "/furniture/music", FurnitureController, :music, as: :music
-    get "/furniture/rugs", FurnitureController, :rugs, as: :rugs
-    get "/furniture/wall_mounted", FurnitureController, :wall_mounted, as: :wall_mounted
-    get "/furniture/wallpaper", FurnitureController, :wallpaper, as: :wallpaper
-
-    get "/clothing/accessories", ClothingController, :accessories, as: :accessories
-    get "/clothing/bags", ClothingController, :bags, as: :bags
-    get "/clothing/bottoms", ClothingController, :bottoms, as: :bottoms
-    get "/clothing/dresses", ClothingController, :dresses, as: :dresses
-    get "/clothing/headwear", ClothingController, :headwear, as: :headwear
-    get "/clothing/shoes", ClothingController, :shoes, as: :shoes
-    get "/clothing/socks", ClothingController, :socks, as: :socks
-    get "/clothing/tops", ClothingController, :tops, as: :tops
-    get "/clothing/umbrellas", ClothingController, :umbrellas, as: :umbrellas
+    Enum.each(@csv_names, fn csv_name ->
+      get "/#{AcCatalog.column_names_from(csv_name)}", ItemController, :index
+    end)
   end
 
   scope "/", AcCatalogWeb do
@@ -61,8 +49,8 @@ defmodule AcCatalogWeb.Router do
 
     get "/owned_items/", OwnedItemsController, :index
 
-    put "/furniture/:module/add/:id", FurnitureController, :add
-    put "/furniture/:module/remove/:id", FurnitureController, :remove
+    put "/owned_items/:module/add/:id", FurnitureController, :add
+    put "/owned_items/:module/remove/:id", FurnitureController, :remove
   end
 
   # Other scopes may use custom stacks.

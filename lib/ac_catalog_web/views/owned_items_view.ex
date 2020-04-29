@@ -1,27 +1,14 @@
 defmodule AcCatalogWeb.OwnedItemsView do
   use AcCatalogWeb, :view
 
-  @modules ["Accessories", "Achievements", "Art", "Bags", "Bottoms", "Construction",
- "Dresses", "Fencing", "Fish", "Floors", "Fossils", "Headwear",
- "Housewares", "Miscellaneous", "Music", "Nook Miles", "Photos", "Posters",
- "Recipes", "Rugs", "Shoes", "Socks", "Tools", "Tops", "Umbrellas",
- "Wall-mounted", "Wallpapers"]
-
-  def csv_module(module) do
-    case module do
-      "Fossils" -> "fossils_mounteds"
-      "Nook Miles" -> "nook_miles"
-      "Wall-mounted" -> "wall_mounted"
-      _ -> String.downcase(module)
-    end
-  end
+  @csv_names Application.get_env(:ac_catalog, :app_vars)[:csv_names]
 
   def show_owned_items(conn, user) do
-    Enum.map(@modules, fn module ->
-      column_name = String.to_existing_atom("#{csv_module(module)}_ids")
+    Enum.map(@csv_names, fn csv_name ->
+      column_name = String.to_existing_atom("#{AcCatalog.column_names_from(csv_name)}_ids")
       ids = Map.get(user, column_name)
 
-      File.stream!("assets/static/data/#{module}-Table 1.csv")
+      File.stream!("assets/static/data/#{csv_name}-Table 1.csv")
       |> CSV.decode!(headers: true)
       |> Enum.filter(fn row ->
         Enum.member?(ids, row["Unique Entry ID"])
@@ -35,7 +22,7 @@ defmodule AcCatalogWeb.OwnedItemsView do
             content_tag(:td, item["Buy"]),
             content_tag(:td, item["Sell"]),
             content_tag(:td, item["Source"]),
-            content_tag(:td, remove_link(conn, csv_module(module), item["Unique Entry ID"]))
+            content_tag(:td, remove_link(conn, AcCatalog.column_names_from(csv_name), item["Unique Entry ID"]))
           ]
         end
       end)
@@ -49,11 +36,11 @@ defmodule AcCatalogWeb.OwnedItemsView do
     end
   end
 
-  def remove_link(conn, module, id) do
+  def remove_link(conn, column_name, id) do
     case conn.assigns.current_user do
       nil -> ""
       _user ->
-        link(" Remove", to: "/furniture/#{module}/remove/#{id}", method: :put)
+        link(" Remove", to: "/owned_items/#{column_name}/remove/#{id}", method: :put)
     end
   end
 end
